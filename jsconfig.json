@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2017",
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/hooks/*": ["hooks/*"],
+      "@/shared/*": ["shared/*"],
+      "@/styles/*": ["styles/*"],
+      "@/api/*": ["pages/api/*"],
+      "@/UI/*": ["components/UI/*"],
+      "@/utils/*": ["utils/*"]
+    }
+  }
+}
