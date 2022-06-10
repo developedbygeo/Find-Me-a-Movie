@@ -1,4 +1,4 @@
-export const darkTheme = {
+const appTheme = {
   colors: {
     accent: '252, 71, 71' || '#fc4747',
     primary: '22, 29, 47' || '#161d2f',
@@ -12,7 +12,7 @@ export const darkTheme = {
       regular: 400,
       medium: 500,
     },
-    size: {
+    sizes: {
       headingL: '2.5rem',
       headingM: '2.25rem',
       headingS: '2rem',
@@ -22,3 +22,5 @@ export const darkTheme = {
     },
   },
 };
+
+export default appTheme;
