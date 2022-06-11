@@ -1,17 +1,17 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import React, { Children } from 'react';
+import { useRouter } from 'next/router';
 
 const NavLink = ({ children, href, ...props }) => {
   const { asPath } = useRouter();
   const child = Children.only(children);
   const isActive = asPath === href || asPath === props.as;
   const childClass = child.props.className || '';
-  const className = `${childClass} ${isActive ? 'active' : ''}`;
+  const className = isActive ? `${childClass} active` : childClass;
 
   return (
     <Link href={href} {...props}>
-      {React.cloneElement(child, { className: className || null })};
+      {React.cloneElement(child, { className: className || null })}
     </Link>
   );
 };
