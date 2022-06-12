@@ -1,20 +1,22 @@
 import NavLink from '@/UI/NavLink';
 import { StyledNav } from './Nav.styled';
 
+import { RiLayoutGridFill, RiFilmFill, RiTvFill, RiBookmarkFill } from 'react-icons/ri';
+
 const Nav = () => {
   return (
     <StyledNav>
       <NavLink href="/">
-        <a>Home</a>
+        <RiLayoutGridFill />
       </NavLink>
       <NavLink href="/movies">
-        <a>Movies</a>
+        <RiFilmFill />
       </NavLink>
-      <NavLink href="/series">
-        <a>TV Shows</a>
+      <NavLink href="/tv-series">
+        <RiTvFill />
       </NavLink>
       <NavLink href="/bookmarks">
-        <a>Saved</a>
+        <RiBookmarkFill />
       </NavLink>
     </StyledNav>
   );
