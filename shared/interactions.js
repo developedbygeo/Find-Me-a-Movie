@@ -14,3 +14,15 @@ export const showActiveLink = css`
     background: rgb(${({ theme }) => theme.colors.white});
   }
 `;
+
+export const interactLink = css`
+  @media (hover: hover) {
+    color: rgb(${({ theme }) => theme.colors.linkHighlight});
+    position: relative;
+
+    &::after {
+      width: 100%;
+      left: 0%;
+    }
+  }
+`;
