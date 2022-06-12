@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { flexMixin } from '@/shared/mixins';
+import { flexMixin, gridMixin } from '@/shared/mixins';
 
 export const LogoContainer = styled.div`
   position: relative;
@@ -12,6 +12,7 @@ export const StyledHeader = styled.header`
   height: 10vh;
   width: 100vw;
   background: rgb(${({ theme }) => theme.colors.primary});
-  ${flexMixin('space-between', 'center', 'row')};
+  ${gridMixin('auto 1fr 0.2fr', '1fr')};
+  place-items: center;
   padding-inline: 5%;
 `;
