@@ -3,6 +3,7 @@ const appTheme = {
     accent: '252, 71, 71' || '#fc4747',
     primary: '22, 29, 47' || '#161d2f',
     secondary: '90, 105, 143' || '#5a698f',
+    linkHighlight: '167, 176, 200' || '#a7b4c0',
     background: '16, 20, 30' || '#10141E',
     white: '255, 255, 255' || '#ffffff',
   },
