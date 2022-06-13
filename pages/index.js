@@ -1,12 +1,30 @@
-import styled from 'styled-components';
-export default function Home() {
+import { getTrendingMovies } from '@/utils/api-utils';
+
+import Trending from '@/components/Movie/Trending';
+import Recommended from '@/components/Movie/Recommended';
+import { getTopTenMovies, getParsedMovie } from '@/utils/data-utils';
+import { StyledLanding } from '@/styles/landing.styled';
+import mockTrending from '@/mock/trending-data.json';
+
+export default function Home({ trending }) {
   return (
-    <>
-      <StyledHeading>Hello World</StyledHeading>
-    </>
+    <StyledLanding>
+      {/* <StyledHeading>Hello World</StyledHeading> */}
+      <Trending trendingData={trending} />
+      <Recommended />
+    </StyledLanding>
   );
 }
 
-const StyledHeading = styled.h1`
-  color: rgb(${({ theme }) => theme.colors.accent});
-`;
+export const getStaticProps = async () => {
+  // const trending = await getTrendingMovies();
+
+  const initialData = mockTrending;
+  const trending = getTopTenMovies(initialData.results);
+
+  return {
+    props: {
+      trending,
+    },
+  };
+};
