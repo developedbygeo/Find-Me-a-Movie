@@ -92,7 +92,8 @@ main{
 }
 h1,h2{
   ${headingL};
-  color: rgb(${({ theme }) => theme.colors.accent});
+  color: rgb(${({ theme }) => theme.colors.white});
+  letter-spacing: 0.225rem;
 
 }
 h3 {
