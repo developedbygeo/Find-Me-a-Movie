@@ -8,7 +8,14 @@ const Header = () => {
   return (
     <StyledHeader>
       <LogoContainer>
-        <Image src={'/assets/logo.svg'} alt="logo" title="Find Me a Movie" layout="fill" draggable="false" />
+        <Image
+          src={'/assets/logo.svg'}
+          alt="logo"
+          title="Find Me a Movie"
+          layout="fill"
+          draggable="false"
+          priority
+        />
       </LogoContainer>
       <Nav />
       <Profile />
