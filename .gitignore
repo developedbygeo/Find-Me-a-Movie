@@ -17,6 +17,7 @@
 
 # misc
 /mock/
+notes
 .DS_Store
 *.pem
 
