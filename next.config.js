@@ -5,4 +5,7 @@ module.exports = {
     reactStrictMode: true,
     styledComponents: true,
   },
+  images: {
+    domains: ['image.tmdb.org'],
+  },
 };
