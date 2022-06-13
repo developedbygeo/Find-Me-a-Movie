@@ -11,7 +11,9 @@
       "@/styles/*": ["styles/*"],
       "@/api/*": ["pages/api/*"],
       "@/UI/*": ["components/UI/*"],
-      "@/utils/*": ["utils/*"]
+      "@/utils/*": ["utils/*"],
+      "@/data/*": ["data/*"],
+      "@/mock/*": ["mock/*"]
     }
   }
 }
