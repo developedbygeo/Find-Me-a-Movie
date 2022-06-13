@@ -4,6 +4,7 @@ export const headingL = css`
   font-size: ${({ theme }) => theme.typography.sizes.headingL};
   letter-spacing: 0.175rem;
   color: rgb(${({ theme }) => theme.colors.text});
+  font-weight: ${({ theme }) => theme.typography.weights.light};
 `;
 
 export const headingM = css`
