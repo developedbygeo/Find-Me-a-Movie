@@ -12,17 +12,31 @@ export const StyledLanding = styled.section`
 `;
 
 export const StyledTrending = styled(ArticleCont)`
-  height: 35vh;
-  ${flexMixin('space-between', 'flex-start', 'column')};
-
-  div {
-    /* display: block; */
-    width: 100%;
-    height: 30vh;
-  }
+  height: 55vh;
+  ${flexMixin('space-around', 'flex-start', 'column')};
 `;
 
 export const StyledRecommended = styled(ArticleCont)`
   height: 60vh;
   ${flexMixin('space-between', 'flex-start', 'column')};
+`;
+
+export const GalleryWrapper = styled.article`
+  width: 100vw;
+  width: auto;
+  align-self: center;
+  ${flexMixin('center', 'center', 'column')};
+  gap: 3rem;
+  overflow: hidden;
+
+  li {
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  div {
+    position: relative;
+    width: 50vw;
+    border-radius: 2rem;
+  }
 `;
