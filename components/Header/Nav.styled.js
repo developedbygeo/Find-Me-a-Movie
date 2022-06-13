@@ -6,8 +6,9 @@ import { showActiveLink, interactLink } from '@/shared/interactions';
 // TODO update interactions and styling for svgs
 
 export const StyledNav = styled.nav`
-  ${flexMixin('center', 'center', 'row')};
-  gap: 1.5rem;
+  ${flexMixin('space-around', 'center', 'row')};
+  width: 70%;
+  margin: auto;
 
   a {
     position: relative;
@@ -15,6 +16,14 @@ export const StyledNav = styled.nav`
     white-space: nowrap;
     font-size: 2rem;
     transition: all 100ms ease;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      min-width: 5rem;
+      min-height: 5rem;
+    }
+
     &::after {
       position: absolute;
       content: '';
