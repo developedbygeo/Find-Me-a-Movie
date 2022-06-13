@@ -6,17 +6,25 @@ import { RiLayoutGridFill, RiFilmFill, RiTvFill, RiBookmarkFill } from 'react-ic
 const Nav = () => {
   return (
     <StyledNav>
-      <NavLink href="/">
-        <RiLayoutGridFill />
+      <NavLink href="/" passHref>
+        <a>
+          <RiLayoutGridFill />
+        </a>
       </NavLink>
-      <NavLink href="/movies">
-        <RiFilmFill />
+      <NavLink href="/movies" passHref>
+        <a>
+          <RiFilmFill />
+        </a>
       </NavLink>
-      <NavLink href="/tv-series">
-        <RiTvFill />
+      <NavLink href="/tv-series" passHref>
+        <a>
+          <RiTvFill />
+        </a>
       </NavLink>
-      <NavLink href="/bookmarks">
-        <RiBookmarkFill />
+      <NavLink href="/bookmarks" passHref>
+        <a>
+          <RiBookmarkFill />
+        </a>
       </NavLink>
     </StyledNav>
   );
