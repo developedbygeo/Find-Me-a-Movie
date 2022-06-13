@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import NavLink from '../UI/NavLink';
 
-import { StyledTrending, MovieContainer } from './TrendingMovie.styled';
+import { StyledTrending, MovieContainer } from './TrendingItem.styled';
 
 import { getParsedMovie, getAmbiguousProperty } from '@/utils/data-utils';
 
