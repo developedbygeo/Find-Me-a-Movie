@@ -1,9 +1,19 @@
 import styled from 'styled-components';
 
-export const StyledTrending = styled.li``;
-
-export const MovieContainer = styled.div`
-  height: 100%;
-  width: 100%;
-  position: relative;
+export const StyledTrending = styled.li`
+  a {
+    height: 100%;
+    position: relative;
+  }
+  span {
+    height: 100% !important;
+    position: relative !important;
+  }
+  img {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+    border-radius: 2rem;
+  }
 `;
