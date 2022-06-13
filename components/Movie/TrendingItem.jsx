@@ -22,12 +22,12 @@ const TrendingItem = ({ movie, priority, ...props }) => {
 
   const parsedData = getParsedMovie(poster_path, genre_ids[0], media_type, date, title);
 
-  // TODO work on image sizing
   return (
     <StyledTrending {...props}>
-      <NavLink href={`/details/${parsedData.slug}`} passHref>
+      {/* <NavLink href={`/details/${parsedData.slug}`} passHref> */}
+      <NavLink href={`/details/${parsedData.slug}`}>
         <a>
-          <MovieContainer>
+          <div>
             <Image
               priority={priority}
               placeholder="blur"
@@ -36,12 +36,9 @@ const TrendingItem = ({ movie, priority, ...props }) => {
               title={title}
               alt={title}
               draggable="false"
-              layout="responsive"
-              width={'90%'}
-              height={'90%'}
-              objectFit="contain"
+              layout="fill"
             />
-          </MovieContainer>
+          </div>
         </a>
       </NavLink>
     </StyledTrending>
