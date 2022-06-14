@@ -12,6 +12,7 @@ export const headingM = css`
   line-height: 1.5;
   letter-spacing: 0.145rem;
   color: rgb(${({ theme }) => theme.colors.text});
+  font-weight: ${({ theme }) => theme.typography.weights.medium};
 `;
 
 export const headingS = css`
