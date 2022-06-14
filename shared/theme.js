@@ -6,6 +6,7 @@ const appTheme = {
     linkHighlight: '167, 176, 200' || '#a7b4c0',
     background: '16, 20, 30' || '#10141E',
     white: '255, 255, 255' || '#ffffff',
+    black: '0, 0, 0' || '#000000',
   },
   typography: {
     weights: {
