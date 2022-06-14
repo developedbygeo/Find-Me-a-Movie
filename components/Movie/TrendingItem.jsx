@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import NavLink from '../UI/NavLink';
 
-import { StyledTrending, MovieContainer } from './TrendingItem.styled';
-
+import Details from './Details';
 import { getParsedMovie, getAmbiguousProperty } from '@/utils/data-utils';
+import { StyledTrending, TrendingDetails } from './TrendingItem.styled';
 
 const TrendingItem = ({ movie, priority, ...props }) => {
   const {
@@ -24,8 +24,7 @@ const TrendingItem = ({ movie, priority, ...props }) => {
 
   return (
     <StyledTrending {...props}>
-      {/* <NavLink href={`/details/${parsedData.slug}`} passHref> */}
-      <NavLink href={`/details/${parsedData.slug}`}>
+      <NavLink href={`/details/${parsedData.slug}`} passHref>
         <a>
           <div>
             <Image
@@ -41,6 +40,9 @@ const TrendingItem = ({ movie, priority, ...props }) => {
           </div>
         </a>
       </NavLink>
+      <TrendingDetails>
+        <Details className="trending-details" title={title} date={date} platform={parsedData.platform} />
+      </TrendingDetails>
     </StyledTrending>
   );
 };
