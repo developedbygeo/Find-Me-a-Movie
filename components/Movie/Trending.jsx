@@ -1,10 +1,8 @@
-import { useState, useEffect } from 'react';
 import useWindow from '@/hooks/useWindow';
 import useSlider from '@/hooks/useSlider';
 
-import { StyledTrending } from '@/styles/landing.styled';
+import { StyledTrending, GalleryWrapper } from '@/styles/landing.styled';
 import TrendingItem from './TrendingItem';
-import { GalleryWrapper } from '@/styles/landing.styled';
 import 'keen-slider/keen-slider.min.css';
 
 const mobileSlider = {
@@ -12,7 +10,7 @@ const mobileSlider = {
   mode: 'free-snap',
   slides: {
     perView: 2,
-    spacing: 0,
+    spacing: 10,
   },
 };
 
@@ -22,9 +20,6 @@ const desktopSlider = {
     perView: 2.3,
   },
 };
-
-// TODO add scroll fn to slider
-// TODO try out embla carousel - installed alrdy
 
 const Trending = ({ trendingData }) => {
   const window = useWindow();
@@ -43,7 +38,7 @@ const Trending = ({ trendingData }) => {
           aria-label="Trending movie gallery"
         >
           {trendingData.map((movie, idx) => {
-            const priority = idx < 3;
+            const priority = idx < 2;
             return (
               <TrendingItem
                 className="keen-slider__slide"
