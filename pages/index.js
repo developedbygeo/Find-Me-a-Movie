@@ -1,30 +1,33 @@
-import { getTrendingMovies } from '@/utils/api-utils';
-
-import Trending from '@/components/Movie/Trending';
-import Recommended from '@/components/Movie/Recommended';
-import { getTopTenMovies, getParsedMovie } from '@/utils/data-utils';
-import { StyledLanding } from '@/styles/landing.styled';
+import { getTrending } from '@/utils/api-utils';
 import mockTrending from '@/mock/trending-data.json';
 
-export default function Home({ trending }) {
+import Trending from '@/components/Content/Trending';
+import List from '@/components/Content/List';
+import { getTrendingSlice } from '@/utils/data-utils';
+import { StyledLanding } from '@/styles/landing.styled';
+
+const Home = ({ trending, restTrending }) => {
   return (
     <StyledLanding>
-      {/* <StyledHeading>Hello World</StyledHeading> */}
       <Trending trendingData={trending} />
-      <Recommended />
+      <List content={restTrending} title={'Recommended Content'} />
     </StyledLanding>
   );
-}
+};
 
 export const getStaticProps = async () => {
   // const trending = await getTrendingMovies();
 
   const initialData = mockTrending;
-  const trending = getTopTenMovies(initialData.results);
+  const topTenTrending = getTrendingSlice(initialData.results, 0, 10);
+  const restTrending = getTrendingSlice(initialData.results, 10);
 
   return {
     props: {
-      trending,
+      trending: topTenTrending,
+      restTrending,
     },
   };
 };
+
+export default Home;
