@@ -22,6 +22,16 @@ export const StyledDetails = styled.div`
       gap: 1rem;
     }
 
+    .movie {
+      text-transform: capitalize;
+    }
+    .tv {
+      text-transform: uppercase;
+    }
+    .date {
+      font-size: 1.8rem;
+    }
+
     span {
       color: rgb(${({ theme }) => theme.colors.white});
       font-weight: ${({ theme }) => theme.typography.weights.light};
