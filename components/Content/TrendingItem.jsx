@@ -5,7 +5,7 @@ import Details from './Details';
 import { getParsedMovie, getAmbiguousProperty } from '@/utils/data-utils';
 import { StyledTrending, TrendingDetails } from './TrendingItem.styled';
 
-const TrendingItem = ({ movie, priority, ...props }) => {
+const TrendingItem = ({ movie, priority, platformAssist, ext, ...props }) => {
   const {
     poster_path,
     genre_ids,
@@ -22,9 +22,14 @@ const TrendingItem = ({ movie, priority, ...props }) => {
 
   const parsedData = getParsedMovie(poster_path, genre_ids[0], media_type, date, title);
 
+  // dedicated to landing page due to ext being unavailable
+  const customLandingExt = parsedData.platform === 'TV' ? '/tv-series' : '/movies';
+  // if not landing, ext is passed through props
+  const urlExtension = ext ? ext : customLandingExt;
+
   return (
     <StyledTrending {...props}>
-      <NavLink href={`/details/${parsedData.slug}`} passHref>
+      <NavLink href={`${urlExtension}/${parsedData.slug}`} passHref>
         <a>
           <div>
             <Image
@@ -41,7 +46,12 @@ const TrendingItem = ({ movie, priority, ...props }) => {
         </a>
       </NavLink>
       <TrendingDetails>
-        <Details className="trending-details" title={title} date={date} platform={parsedData.platform} />
+        <Details
+          className="trending-details"
+          title={title}
+          date={date}
+          platform={parsedData.platform ? parsedData.platform : platformAssist}
+        />
       </TrendingDetails>
     </StyledTrending>
   );

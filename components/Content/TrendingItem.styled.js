@@ -4,6 +4,7 @@ export const StyledTrending = styled.li`
   position: relative;
   cursor: pointer;
   overflow: hidden;
+  /* box-shadow: #000000 5px 10px 25px 30px; */
 
   & div {
     position: relative;
@@ -30,4 +31,5 @@ export const StyledTrending = styled.li`
   }
 `;
 
+// exists just for dynamic props on the container
 export const TrendingDetails = styled.article``;
