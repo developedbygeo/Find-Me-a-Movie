@@ -4,8 +4,8 @@ import { flexMixin, gridMixin } from '@/shared/mixins';
 
 export const LogoContainer = styled.div`
   position: relative;
-  height: 6vh;
-  width: 10vw;
+  height: 4vh;
+  width: 8vw;
 `;
 
 export const StyledHeader = styled.header`
