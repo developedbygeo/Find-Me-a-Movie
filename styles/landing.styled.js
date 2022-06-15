@@ -4,21 +4,34 @@ import { ArticleCont } from '@/UI/Container.styled';
 import { flexMixin, gridMixin } from '@/shared/mixins';
 
 export const StyledLanding = styled.section`
-  height: 100%;
-  width: 90%;
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
   margin: auto;
-  /* TODO update this after the next component's ready */
-  ${gridMixin('1fr', '0.6fr 1fr')}
+  ${gridMixin('1fr', 'auto')}
+  gap: 3rem;
 `;
 
 export const StyledTrending = styled(ArticleCont)`
   height: 45vh;
+  margin-top: 3rem;
   ${flexMixin('space-around', 'flex-start', 'column')};
+
+  h1 {
+    padding: 5% 0 0 5%;
+  }
 `;
 
 export const StyledRecommended = styled(ArticleCont)`
-  height: 60vh;
+  height: auto;
+  width: 90%;
+  margin-block: 3rem;
   ${flexMixin('space-between', 'flex-start', 'column')};
+  gap: 2rem;
+
+  h1 {
+    padding-block: 2.5%;
+  }
 `;
 
 export const GalleryWrapper = styled.article`
