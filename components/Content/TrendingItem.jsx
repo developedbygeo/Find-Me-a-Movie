@@ -29,7 +29,7 @@ const TrendingItem = ({ movie, priority, platformAssist, ext, ...props }) => {
 
   return (
     <StyledTrending {...props}>
-      <NavLink href={`/${urlExtension}/${parsedData.slug}`} passHref>
+      <NavLink href={`${urlExtension}/${parsedData.slug}`} passHref>
         <a>
           <div>
             <Image

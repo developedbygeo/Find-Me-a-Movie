@@ -7,7 +7,7 @@ import List from '@/components/Content/List';
 const Movies = ({ movies }) => {
   return (
     <StyledPage>
-      <List content={movies} title="Movies" ext={'movies'} />
+      <List content={movies} title="Movies" ext={'/movies'} />
     </StyledPage>
   );
 };
