@@ -3,15 +3,16 @@ import movieLookup from '@/data/movieLookup';
 
 export const getAmbiguousProperty = (...args) => args.find((arg) => arg);
 
-export const getTopTenMovies = (arr) => arr.slice(0, 10);
+export const getTrendingSlice = (arr, start, end) => arr.slice(start, end);
 
 export const getImage = (path) => `https://image.tmdb.org/t/p/w500${path}`;
 
 export const getGenre = (id, platform) => {
+  if (!platform) return undefined;
   if (platform === 'tv') {
-    return tvLookup.find((genre) => genre.id === id).name;
+    return tvLookup.find((genre) => genre.id === id).name || '';
   }
-  return movieLookup.find((genre) => genre.id === id).name;
+  return movieLookup.find((genre) => genre.id === id).name || '';
 };
 
 export const getDate = (date) => new Date(date).getFullYear();
@@ -32,7 +33,10 @@ export const getParsedMovie = (imagePartialPath, genreCode, platformCode, dateSt
   const genre = getGenre(genreCode, platformCode);
   const date = getDate(dateStr);
   const slug = getSlug(titleStr);
-  const platform = formatPlatformName(platformCode);
-
-  return { image, genre, platform, date, slug };
+  let platform;
+  if (platformCode) {
+    platform = formatPlatformName(platformCode);
+    return { image, genre, platform, date, slug };
+  }
+  return { image, genre, date, slug };
 };
