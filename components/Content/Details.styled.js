@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 import { flexMixin } from '@/shared/mixins';
-import { headingL } from '@/shared/typography';
+import { headingM } from '@/shared/typography';
 
 export const StyledDetails = styled.div`
   width: 100%;
   height: 30%;
-  padding: 5% 10%;
+  padding: 5% 6%;
   ${flexMixin('space-around', 'flex-start', 'column')};
 
   & > .details {
@@ -28,8 +28,8 @@ export const StyledDetails = styled.div`
     }
   }
 
-  &.title {
-    ${headingL};
+  .title h2 {
+    ${headingM};
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
