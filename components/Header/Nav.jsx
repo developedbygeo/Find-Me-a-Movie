@@ -8,22 +8,22 @@ const Nav = () => {
     <StyledNav>
       <NavLink href="/" passHref>
         <a>
-          <RiLayoutGridFill />
+          <RiLayoutGridFill title="Home" />
         </a>
       </NavLink>
       <NavLink href="/movies" passHref>
         <a>
-          <RiFilmFill />
+          <RiFilmFill title="Movies" />
         </a>
       </NavLink>
       <NavLink href="/tv-series" passHref>
         <a>
-          <RiTvFill />
+          <RiTvFill title="TV Shows" />
         </a>
       </NavLink>
       <NavLink href="/bookmarks" passHref>
         <a>
-          <RiBookmarkFill />
+          <RiBookmarkFill title="Bookmarks" />
         </a>
       </NavLink>
     </StyledNav>
