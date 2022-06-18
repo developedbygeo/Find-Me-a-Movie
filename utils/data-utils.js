@@ -41,9 +41,5 @@ export const getParsedMovie = (imagePartialPath, genreCode, platformCode, dateSt
   return { image, genre, date, slug };
 };
 
-const formatter = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  curency: 'USD',
-});
-
-export const formatMoneyValue = (sum) => formatter.format(sum);
+export const formatCurrency = (sum) =>
+  new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(sum);
