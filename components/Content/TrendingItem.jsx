@@ -24,6 +24,7 @@ const TrendingItem = ({ movie, priority, platformAssist, ext, ...props }) => {
 
   // dedicated to landing page due to ext being unavailable
   const customLandingExt = parsedData.platform === 'TV' ? '/tv-series' : '/movies';
+
   // if not landing, ext is passed through props
   const urlExtension = ext ? ext : customLandingExt;
 
