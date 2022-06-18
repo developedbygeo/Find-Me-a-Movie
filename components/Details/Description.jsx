@@ -5,6 +5,7 @@ const Description = ({ title, tagline, overview, genres }) => {
     <StyledDescription>
       <StyledTitleCont>
         <h1>{title}</h1>
+        <h2>{tagline}</h2>
       </StyledTitleCont>
       <ul>
         {genres.map((genre) => (
@@ -12,7 +13,6 @@ const Description = ({ title, tagline, overview, genres }) => {
         ))}
       </ul>
       <StyledText>
-        <h2>{tagline}</h2>
         <p>{overview}</p>
       </StyledText>
     </StyledDescription>
