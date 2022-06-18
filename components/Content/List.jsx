@@ -5,7 +5,8 @@ import { StyledList } from './List.styled';
 
 const List = ({ content, title, ext }) => {
   // platform data is only available for data fetched in Landing. For sections /// where this isn't available, this is a helper to derive the platform.
-  const platformAssist = ext === 'tv-series' ? 'tv' : 'movies';
+  const platformAssist = ext === '/tv-series' ? 'tv' : 'movies';
+
   return (
     <StyledRecommended>
       <h1>{title}</h1>
