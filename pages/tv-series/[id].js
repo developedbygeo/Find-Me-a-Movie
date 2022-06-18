@@ -7,10 +7,6 @@ import useSWR from 'swr';
 import { StyledPage } from '@/styles/content.styled';
 
 const SeriesDetails = () => {
-  const router = useRouter();
-  const [movieDetails, setMovieDetails] = useState(null);
-  console.log(router.query);
-
   return (
     <StyledPage>
       <h1>hello world</h1>
