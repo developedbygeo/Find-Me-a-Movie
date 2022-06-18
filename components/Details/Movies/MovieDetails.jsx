@@ -1,6 +1,6 @@
 import { StyledMDetails } from '../Details.styled';
 
-import { formatMoneyValue } from '@/utils/data-utils';
+import { formatCurrency } from '@/utils/data-utils';
 
 const MovieDetails = ({ budget, revenue, runtime }) => {
   // TODO fit runtime in there too
@@ -8,11 +8,11 @@ const MovieDetails = ({ budget, revenue, runtime }) => {
     <StyledMDetails>
       <div>
         <h3>Budget</h3>
-        <p>{formatMoneyValue(budget)}</p>
+        <p>{formatCurrency(budget)}</p>
       </div>
       <div>
         <h3>Revenue</h3>
-        <p>{formatMoneyValue(revenue)}</p>
+        <p>{formatCurrency(revenue)}</p>
       </div>
     </StyledMDetails>
   );
