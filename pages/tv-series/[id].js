@@ -1,34 +1,27 @@
-import { StyledPage, StyledLoading } from '@/styles/content.styled';
-
-import { fetcher } from '@/utils/api-utils';
+import data from '@/mock/tv-series-details.json';
 import useSWR from 'swr';
 
-import LoadingSpinner from '@/components/UI/LoadingSpinner';
+import { StyledPage, StyledLoading } from '@/styles/content.styled';
+import { fetcher } from '@/utils/api-utils';
+import Description from '@/components/Details/Description';
+import FeaturedImage from '@/components/Details/FeaturedImage';
+
+import { getDetailGenres, getDetailTitle } from '@/utils/data-utils';
+
+// import LoadingSpinner from '@/components/UI/LoadingSpinner';
+import ErrorLoad from '@/components/UI/ErrorLoad';
 
 const SeriesDetails = ({ id, platform }) => {
-  const { data, error } = useSWR([`/api/details?platform=${platform}&id=${id}`], fetcher);
-
-  // TODO implement loading and error states
-
-  // if (!data) {
-  //   return <p>Loading</p>;
-  // }
-
-  // if (error) {
-  //   return <p>Oops, something went wrong</p>;
-  // }
+  // const { data, error } = useSWR([`/api/details?platform=${platform}&id=${id}`], fetcher);
+  const title = getDetailTitle(data, 'name', 'original_name');
 
   return (
-    <StyledLoading>
-      <LoadingSpinner />
-    </StyledLoading>
+    // <ErrorLoad error={error} data={data}>
+    <ErrorLoad error={undefined} data={1}>
+      <FeaturedImage backdropURL={data.backdrop_path} title={title} />
+      <Description title={title} tagline={data.tagline} overview={data.overview || ''} genres={data.genres} />
+    </ErrorLoad>
   );
-
-  // return (
-  //   <StyledPage>
-  //     <h1>hello world</h1>
-  //   </StyledPage>
-  // );
 };
 
 export function getServerSideProps(ctx) {
