@@ -24,5 +24,7 @@ export const headingS = css`
 
 export const body = css`
   font-size: ${({ theme }) => theme.typography.sizes.bodyM};
+  font-weight: ${({ theme }) => theme.typography.weights.regular};
   color: rgb(${({ theme }) => theme.colors.white});
+  letter-spacing: 0.15rem;
 `;
