@@ -1,7 +1,9 @@
-import { StyledPage } from '@/styles/content.styled';
+import { StyledPage, StyledLoading } from '@/styles/content.styled';
 
 import { fetcher } from '@/utils/api-utils';
 import useSWR from 'swr';
+
+import LoadingSpinner from '@/components/UI/LoadingSpinner';
 
 const SeriesDetails = ({ id, platform }) => {
   const { data, error } = useSWR([`/api/details?platform=${platform}&id=${id}`], fetcher);
@@ -17,10 +19,16 @@ const SeriesDetails = ({ id, platform }) => {
   // }
 
   return (
-    <StyledPage>
-      <h1>hello world</h1>
-    </StyledPage>
+    <StyledLoading>
+      <LoadingSpinner />
+    </StyledLoading>
   );
+
+  // return (
+  //   <StyledPage>
+  //     <h1>hello world</h1>
+  //   </StyledPage>
+  // );
 };
 
 export function getServerSideProps(ctx) {
