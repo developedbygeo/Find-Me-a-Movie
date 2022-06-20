@@ -1,14 +1,52 @@
 import styled from 'styled-components';
 
-export const StyledDescription = styled.section``;
+import { flexMixin } from '@/shared/mixins';
 
-export const StyledText = styled.article``;
+export const StyledDescription = styled.section`
+  width: 90%;
+  height: auto;
+  margin-inline: auto;
+  ${flexMixin('center', 'flex-start', 'column')};
+  gap: 3rem;
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 200;
+    color: rgba(${({ theme }) => theme.colors.white}, 0.7);
+  }
 
-export const StyledImageCont = styled.div`
-  height: 30vh;
-  width: 100vw;
+  /* genres UL */
+  ul {
+    width: 100%;
+    ${flexMixin('flex-start', 'center', 'row')};
+    gap: 3rem;
+  }
+  li {
+    font-weight: ${({ theme }) => theme.typography.weights.superLight};
+    color: rgba(${({ theme }) => theme.colors.white}, 0.75);
+    letter-spacing: 0.175rem;
+  }
 `;
 
-export const StyledTitleCont = styled.article``;
+export const StyledText = styled.article`
+  p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: ${({ theme }) => theme.typography.weights.regular};
+    color: rgba(${({ theme }) => theme.colors.white}, 0.85);
+    letter-spacing: 0.175rem;
+    line-height: 1.65;
+  }
+`;
+
+export const StyledImageCont = styled.div`
+  position: relative;
+  height: 30vh;
+  width: 100%;
+`;
+
+export const StyledTitleCont = styled.article`
+  ${flexMixin('center', 'flex-start', 'column')};
+  gap: 1.5rem;
+`;
 
 export const StyledMDetails = styled.article``;
