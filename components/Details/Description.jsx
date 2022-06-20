@@ -1,5 +1,7 @@
 import { StyledDescription, StyledTitleCont, StyledText } from './Details.styled';
 
+// TODO add rating between TitleCont and ul
+
 const Description = ({ title, tagline, overview, genres }) => {
   return (
     <StyledDescription>
