@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { flexMixin } from '@/shared/mixins';
 import { showActiveLink, interactLink } from '@/shared/interactions';
 
-// TODO update interactions and styling for svgs
-
 export const StyledNav = styled.nav`
   ${flexMixin('space-around', 'center', 'row')};
   width: 70%;
