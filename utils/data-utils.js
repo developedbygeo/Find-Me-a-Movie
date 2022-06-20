@@ -5,7 +5,7 @@ export const getAmbiguousProperty = (...args) => args.find((arg) => arg);
 
 export const getTrendingSlice = (arr, start, end) => arr.slice(start, end);
 
-export const getImage = (path) => `https://image.tmdb.org/t/p/w500${path}`;
+export const getImage = (path, size = 'w500') => `https://image.tmdb.org/t/p/${size}${path}`;
 
 export const getGenre = (id, platform) => {
   if (!platform) return undefined;
@@ -43,3 +43,13 @@ export const getParsedMovie = (imagePartialPath, genreCode, platformCode, dateSt
 
 export const formatCurrency = (sum) =>
   new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(sum);
+
+export const getDetailTitle = (detailObj, ...queries) => {
+  return (
+    queries.map((query) => (query in detailObj ? detailObj[query] : null)).filter((val) => val)[0] ||
+    undefined
+  );
+};
+
+export const getDetailGenres = (detailObj) =>
+  'genres' in detailObj ? detailObj.genres.map((el) => el.name) : '';
