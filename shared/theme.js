@@ -10,6 +10,7 @@ const appTheme = {
   },
   typography: {
     weights: {
+      superLight: 200,
       light: 300,
       regular: 400,
       medium: 500,
