@@ -51,5 +51,23 @@ export const getDetailTitle = (detailObj, ...queries) => {
   );
 };
 
+export const getDetailClassname = (rating) => {
+  let className;
+  switch (true) {
+    case rating < 5:
+      className = 'negative';
+      break;
+    case rating > 5 && rating < 7.5:
+      className = 'neutral';
+      break;
+    case rating > 7.5:
+      className = 'positive';
+      break;
+    default:
+      className = 'neutral';
+  }
+  return className;
+};
+
 export const getDetailGenres = (detailObj) =>
   'genres' in detailObj ? detailObj.genres.map((el) => el.name) : '';
