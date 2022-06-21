@@ -19,7 +19,14 @@ const SeriesDetails = ({ id, platform }) => {
     // <ErrorLoad error={error} data={data}>
     <ErrorLoad error={undefined} data={1}>
       <FeaturedImage backdropURL={data.backdrop_path} title={title} />
-      <Description title={title} tagline={data.tagline} overview={data.overview || ''} genres={data.genres} />
+
+      <Description
+        title={title}
+        tagline={data.tagline}
+        overview={data.overview || ''}
+        rating={data.vote_average}
+        genres={data.genres}
+      />
     </ErrorLoad>
   );
 };
