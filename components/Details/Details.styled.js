@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { flexMixin } from '@/shared/mixins';
+import { flexMixin, gridMixin } from '@/shared/mixins';
 
 export const StyledDescription = styled.section`
   width: 90%;
@@ -44,9 +44,41 @@ export const StyledImageCont = styled.div`
   width: 100%;
 `;
 
+export const StyledRating = styled.article`
+  .positive {
+    color: rgb(${({ theme }) => theme.colors.ratingPositive});
+  }
+
+  .neutral {
+    color: rgb(${({ theme }) => theme.colors.ratingNeutral});
+  }
+
+  .negative {
+    color: rgb(${({ theme }) => theme.colors.ratingNegative});
+  }
+
+  p {
+    color: rgba(${({ theme }) => theme.colors.white}, 0.75);
+  }
+  p,
+  span {
+    font-size: 2rem;
+  }
+`;
+
 export const StyledTitleCont = styled.article`
-  ${flexMixin('center', 'flex-start', 'column')};
+  ${gridMixin('1fr 0.2fr', 'repeat(2, 1fr)')};
+  width: 100%;
   gap: 1.5rem;
+
+  h2 {
+    grid-area: 2/1/2/2;
+  }
+  article {
+    ${flexMixin('center', 'center', 'row')};
+    height: 100%;
+    grid-area: 1/2/3/3;
+  }
 `;
 
 export const StyledMDetails = styled.article``;
