@@ -7,6 +7,9 @@ const appTheme = {
     background: '16, 20, 30' || '#10141E',
     white: '255, 255, 255' || '#ffffff',
     black: '0, 0, 0' || '#000000',
+    ratingPositive: '255, 215, 0' || '#FFD700',
+    ratingNeutral: '255, 237, 138' || '#FFED8A',
+    ratingNegative: '252, 71, 71' || '#fc4747',
   },
   typography: {
     weights: {
