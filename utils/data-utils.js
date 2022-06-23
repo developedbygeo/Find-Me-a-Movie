@@ -71,3 +71,8 @@ export const getDetailClassname = (rating) => {
 
 export const getDetailGenres = (detailObj) =>
   'genres' in detailObj ? detailObj.genres.map((el) => el.name) : '';
+
+export const getVideoId = (videoArr) => {
+  if (!videoArr) return '';
+  return videoArr.find((el) => el.type === 'Trailer').key;
+};
