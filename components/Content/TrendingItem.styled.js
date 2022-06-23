@@ -4,7 +4,6 @@ export const StyledTrending = styled.li`
   position: relative;
   cursor: pointer;
   overflow: hidden;
-  /* box-shadow: #000000 5px 10px 25px 30px; */
 
   & div {
     position: relative;
