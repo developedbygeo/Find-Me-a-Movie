@@ -27,18 +27,18 @@ export const resetDefaults = css`
 
 export const customScrollbar = css`
   scrollbar-width: thin;
-  scrollbar-color: rgba(${({ theme }) => theme.colors.primary}, 1) transparent;
+  scrollbar-color: rgba(${({ theme }) => theme.colors.secondary}, 1) transparent;
   scrollbar-track-color: transparent;
 
   ::-webkit-scrollbar {
-    width: 7.5px;
+    width: 0.5rem;
   }
   ::-webkit-scrollbar-track {
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: rgb(${({ theme }) => theme.colors.primary});
-    border-radius: 20px;
+    background-color: rgb(${({ theme }) => theme.colors.secondary});
+    border-radius: 2rem;
     border: transparent;
   }
 `;
