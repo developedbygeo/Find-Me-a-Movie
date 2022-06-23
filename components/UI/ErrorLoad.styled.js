@@ -25,4 +25,9 @@ export const StyledErrLoad = styled.section`
       text-align: center;
     }
   }
+
+  &.sub {
+    width: 3rem;
+    height: 3rem;
+  }
 `;
