@@ -66,11 +66,12 @@ html{
     }
 }
 body{
-    height: auto;
+    height: 100vh;
     width: 100vw;
     font-family: 'Outfit', sans-serif;
     background: rgb(${({ theme }) => theme.colors.background});
     overflow-x: hidden;
+    overflow-y: auto;
     ${customScrollbar};
 }
 #root{
@@ -85,7 +86,6 @@ main{
     margin: auto;
     background: rgb(${({ theme }) => theme.colors.background});
     color: rgb(${({ theme }) => theme.colors.white});
-    ${customScrollbar};
     &>svg{
       ${maxContainer};
     }
