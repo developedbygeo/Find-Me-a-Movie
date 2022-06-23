@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 import { flexMixin, gridMixin } from '@/shared/mixins';
+import { tagNeumorph } from '@/shared/neumorphic';
 
-export const StyledDescription = styled.section`
+export const StyledDescription = styled.article`
   width: 90%;
   height: auto;
   margin-inline: auto;
@@ -25,6 +26,7 @@ export const StyledDescription = styled.section`
     font-weight: ${({ theme }) => theme.typography.weights.superLight};
     color: rgba(${({ theme }) => theme.colors.white}, 0.75);
     letter-spacing: 0.175rem;
+    ${tagNeumorph};
   }
 `;
 
