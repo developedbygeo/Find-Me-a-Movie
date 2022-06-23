@@ -1,5 +1,7 @@
 import data from '@/mock/tv-series-details.json';
 import externals from '@/mock/externals-tv-series.json';
+import reviews from '@/mock/reviews-tv-series.json';
+import video from '@/mock/video-tv-series.json';
 import useSWR from 'swr';
 
 import { StyledPage, StyledLoading } from '@/styles/content.styled';
@@ -7,17 +9,24 @@ import { fetcher } from '@/utils/api-utils';
 import Description from '@/components/Details/Description';
 import FeaturedImage from '@/components/Details/FeaturedImage';
 import ExternalLinks from '@/components/Details/ExternalLinks';
+import Reviews from '@/components/Content/Reviews';
+import YoutubeVideo from '@/components/Details/YoutubeVideo';
 
-import { getDetailTitle } from '@/utils/data-utils';
+import { getDetailTitle, getVideoId } from '@/utils/data-utils';
 
 import SeasonList from '@/components/Details/Shows/SeasonList';
 import ErrorLoad from '@/components/UI/ErrorLoad';
 
-// TODO adjust data to include externals
+// TODO add recommended
 const SeriesDetails = ({ id, platform }) => {
   // const { data, error } = useSWR([`/api/details?platform=${platform}&id=${id}`], fetcher);
+  // const { data: optional, error } = useSWR([`/api/optionalDetails?platform=${platform}&id=${id}`], fetcher);
 
   const title = getDetailTitle(data, 'name', 'original_name');
+
+  let videoId;
+
+  if (video) videoId = getVideoId(video.results);
 
   return (
     // <ErrorLoad error={error} data={data}>
@@ -31,6 +40,8 @@ const SeriesDetails = ({ id, platform }) => {
         rating={data.vote_average}
         genres={data.genres}
       />
+      <YoutubeVideo videoId={videoId} title={title} />
+      <Reviews reviewsArray={reviews.results} />
       <ExternalLinks links={externals} />
       <SeasonList title={title} seasons={data.seasons} />
     </ErrorLoad>
