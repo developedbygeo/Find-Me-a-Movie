@@ -3,12 +3,12 @@ import { StyledRecommended } from '@/styles/landing.styled';
 import TrendingItem from './TrendingItem';
 import { StyledList } from './List.styled';
 
-const List = ({ content, title, ext }) => {
+const List = ({ content, title, ext, ...props }) => {
   // platform data is only available for data fetched in Landing. For sections /// where this isn't available, this is a helper to derive the platform.
   const platformAssist = ext === '/tv-series' ? 'tv' : 'movies';
 
   return (
-    <StyledRecommended>
+    <StyledRecommended {...props}>
       <h1>{title}</h1>
       <StyledList>
         {content.map((item, idx) => {
