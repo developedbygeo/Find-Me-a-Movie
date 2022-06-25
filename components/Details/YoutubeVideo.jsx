@@ -13,14 +13,15 @@ const YoutubeVideo = ({ videoId, videoTitle }) => {
   return (
     <StyledVideo>
       <iframe
+        type="text/html"
         width="853"
         height="480"
-        src={`https://www.youtube-nocookie.com/embed/${videoId}?origin=${currLocation}&widget_referrer=${currLocation}`}
+        src={`https://www.youtube.com/embed/${videoId}?autoplay=0&origin=${currLocation}`}
         frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; clipboard-write"
         allowFullScreen
+        modestbranding="1"
         title={videoTitle}
-      />
+      ></iframe>
     </StyledVideo>
   );
 };
