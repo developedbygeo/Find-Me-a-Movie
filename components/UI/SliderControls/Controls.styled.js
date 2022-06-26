@@ -26,7 +26,7 @@ export const StyledDots = styled.div`
   gap: 1.25rem;
 
   & > button {
-    color: rgb(${({ theme }) => theme.colors.white});
+    color: rgb(${({ theme }) => theme.colors.secondary});
     width: 3rem;
     height: 3rem;
     svg {
