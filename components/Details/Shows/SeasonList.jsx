@@ -4,6 +4,7 @@ import useWindow from '@/hooks/useWindow';
 
 import 'keen-slider/keen-slider.min.css';
 
+import Controls from '@/components/UI/SliderControls/Controls';
 import { GalleryWrapper } from '@/styles/landing.styled';
 import { ListWrapper } from './SeasonList.styled';
 
@@ -23,12 +24,12 @@ const desktopSlider = {
   },
 };
 
-const SeasonList = ({ title, seasons }) => {
+const SeasonList = ({ title, seasons, shouldHaveButtons }) => {
   const window = useWindow();
   const settings = window > 1150 ? desktopSlider : mobileSlider;
   const { ref, slider, currentSlide, load } = useSlider(settings);
+  const isSliderReady = load && slider.current;
 
-  //   TODO add wrapper around the whole component instead of frag
   return (
     <ListWrapper>
       <h3>Available Seasons</h3>
@@ -57,6 +58,9 @@ const SeasonList = ({ title, seasons }) => {
           })}
         </ul>
       </GalleryWrapper>
+      {shouldHaveButtons && isSliderReady && (
+        <Controls slidesLength={seasons.length} slider={slider} currentSlide={currentSlide} />
+      )}
     </ListWrapper>
   );
 };
