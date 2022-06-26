@@ -10,6 +10,7 @@ const appTheme = {
     ratingPositive: '255, 215, 0' || '#FFD700',
     ratingNeutral: '255, 237, 138' || '#FFED8A',
     ratingNegative: '252, 71, 71' || '#fc4747',
+    buttonFocusBg: '130, 143, 176' || '#829bb0',
   },
   typography: {
     weights: {
