@@ -49,8 +49,8 @@ const SeriesDetails = ({ id, platform }) => {
       <YoutubeVideo videoId={videoId} title={title} />
       <Reviews reviewsArray={reviews.results} />
       <ExternalLinks links={externals} />
-      <SeasonList title={title} seasons={data.seasons} />
-      <List content={recommendedContent} title="Recommended" className="recommended" />
+      <SeasonList title={title} seasons={data.seasons} shouldHaveButtons />
+      <List content={recommendedContent} title="You may also like..." className="recommended" />
     </ErrorLoad>
   );
 };
