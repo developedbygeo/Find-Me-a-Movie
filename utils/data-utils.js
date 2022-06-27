@@ -76,3 +76,8 @@ export const getVideoId = (videoArr) => {
   if (!videoArr) return '';
   return videoArr.find((el) => el.type === 'Trailer').key;
 };
+
+export const getDetailAverage = (objArray, detail) => {
+  if (objArray.every((obj) => !obj[detail])) return '';
+  return objArray.reduce((acc, obj) => acc + obj[detail], 0) / objArray.length;
+};
