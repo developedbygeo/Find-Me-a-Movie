@@ -24,7 +24,7 @@ const desktopSlider = {
   },
 };
 
-const SeasonList = ({ title, seasons, shouldHaveButtons }) => {
+const SeasonList = ({ title, showId, seasons, shouldHaveButtons }) => {
   const window = useWindow();
   const settings = window > 1150 ? desktopSlider : mobileSlider;
   const { ref, slider, currentSlide, load } = useSlider(settings);
@@ -47,6 +47,7 @@ const SeasonList = ({ title, seasons, shouldHaveButtons }) => {
               <SeasonItem
                 className="keen-slider__slide"
                 key={season.id}
+                showId={showId}
                 details={season}
                 priority={isPriority}
                 aria-label={`slide ${idx + 1} of ${seasons.length}`}
