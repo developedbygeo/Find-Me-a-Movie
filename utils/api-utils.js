@@ -30,3 +30,13 @@ export const getPopularTV = async () => {
   );
   return res.json();
 };
+
+export const getShowDetails = async (showId, seasonId) => {
+  const res = await fetch(
+    `https://api.themoviedb.org/3/tv/${showId}/season/${seasonId}?api_key=${process.env.TMDB_KEY}&language=en-US`
+  );
+
+  const data = res.json();
+
+  return data;
+};
