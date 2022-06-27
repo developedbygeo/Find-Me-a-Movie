@@ -5,12 +5,12 @@ import { StyledTrending } from '@/components/Content/TrendingItem.styled';
 
 import { getImage } from '@/utils/data-utils';
 
-const SeasonItem = ({ details, priority, ...props }) => {
+const SeasonItem = ({ details, showId, priority, ...props }) => {
   const imagePath = getImage(details['poster_path']);
 
   return (
     <StyledTrending {...props}>
-      <Link href={`/tv-series/season/${details.id}`} passHref>
+      <Link href={`/tv-series/season/${details['season_number']}?show=${showId}`} passHref>
         <a>
           <div>
             <Image
