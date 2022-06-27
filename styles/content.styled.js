@@ -16,6 +16,9 @@ export const StyledPage = styled(StyledLanding)`
       font-weight: 300;
     }
   }
+  h3 {
+    padding-block: 1rem;
+  }
 `;
 
 export const StyledLoading = styled.section`
