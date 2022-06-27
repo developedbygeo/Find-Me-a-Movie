@@ -38,7 +38,6 @@ const SeriesDetails = ({ id, platform }) => {
     // <ErrorLoad error={error} data={data}>
     <ErrorLoad error={undefined} data={1}>
       <FeaturedImage backdropURL={data.backdrop_path} title={title} />
-
       <Description
         title={title}
         tagline={data.tagline}
@@ -49,8 +48,8 @@ const SeriesDetails = ({ id, platform }) => {
       <YoutubeVideo videoId={videoId} title={title} />
       <Reviews reviewsArray={reviews.results} />
       <ExternalLinks links={externals} />
-      <SeasonList title={title} seasons={data.seasons} shouldHaveButtons />
-      <List content={recommendedContent} title="You may also like..." className="recommended" />
+      <SeasonList title={title} showId={id} seasons={data.seasons} shouldHaveButtons />
+      <List content={recommendedContent} title="You may also like..." titleAs="h3" className="recommended" />
     </ErrorLoad>
   );
 };
