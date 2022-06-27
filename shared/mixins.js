@@ -42,3 +42,17 @@ export const customScrollbar = css`
     border: transparent;
   }
 `;
+
+export const ratingColor = css`
+  .positive {
+    color: rgb(${({ theme }) => theme.colors.ratingPositive});
+  }
+
+  .neutral {
+    color: rgb(${({ theme }) => theme.colors.ratingNeutral});
+  }
+
+  .negative {
+    color: rgb(${({ theme }) => theme.colors.ratingNegative});
+  }
+`;
