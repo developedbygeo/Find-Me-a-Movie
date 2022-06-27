@@ -1,7 +1,18 @@
 import styled from 'styled-components';
 
-import { flexMixin, gridMixin } from '@/shared/mixins';
+import { flexMixin, gridMixin, ratingColor } from '@/shared/mixins';
 import { tagNeumorph } from '@/shared/neumorphic';
+
+export const SimpleDescription = styled.article`
+  width: 90%;
+  margin-inline: auto;
+  ${flexMixin('center', 'flex-start', 'column')};
+  gap: 2.5rem;
+
+  & > article {
+    display: block;
+  }
+`;
 
 export const StyledDescription = styled.article`
   width: 90%;
@@ -36,7 +47,7 @@ export const StyledText = styled.article`
     font-weight: ${({ theme }) => theme.typography.weights.regular};
     color: rgba(${({ theme }) => theme.colors.white}, 0.85);
     letter-spacing: 0.175rem;
-    line-height: 1.65;
+    line-height: 1.85;
   }
 `;
 
@@ -47,17 +58,7 @@ export const StyledImageCont = styled.div`
 `;
 
 export const StyledRating = styled.article`
-  .positive {
-    color: rgb(${({ theme }) => theme.colors.ratingPositive});
-  }
-
-  .neutral {
-    color: rgb(${({ theme }) => theme.colors.ratingNeutral});
-  }
-
-  .negative {
-    color: rgb(${({ theme }) => theme.colors.ratingNegative});
-  }
+  ${ratingColor};
 
   p {
     color: rgba(${({ theme }) => theme.colors.white}, 0.75);
