@@ -1,10 +1,27 @@
 import { useMemo } from 'react';
-import { StyledDescription, StyledTitleCont, StyledRating, StyledText } from './Details.styled';
+import {
+  SimpleDescription,
+  StyledDescription,
+  StyledTitleCont,
+  StyledRating,
+  StyledText,
+} from './Details.styled';
 
 import { getDetailClassname } from '@/utils/data-utils';
 
-const Description = ({ title, tagline, overview, rating, genres }) => {
+const Description = ({ title, tagline, overview, rating, genres, isSeasonDetails }) => {
   const ratingClassName = useMemo(() => getDetailClassname(+rating), [rating]);
+
+  if (isSeasonDetails) {
+    return (
+      <SimpleDescription>
+        <h1>{title}</h1>
+        <StyledText>
+          <p>{overview}</p>
+        </StyledText>
+      </SimpleDescription>
+    );
+  }
 
   return (
     <StyledDescription>
