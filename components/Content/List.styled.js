@@ -25,3 +25,6 @@ export const StyledList = styled.ul`
     height: 50%;
   }
 `;
+
+// for semantic purposes - to manipulate the tag
+export const StyledTitle = styled.h1``;
