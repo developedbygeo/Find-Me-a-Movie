@@ -27,4 +27,7 @@ export const StyledList = styled.ul`
 `;
 
 // for semantic purposes - to manipulate the tag
-export const StyledTitle = styled.h1``;
+export const StyledTitle = styled.h1`
+  font-weight: 400;
+  font-family: 'Outfit', sans-serif;
+`;
