@@ -14,6 +14,6 @@ export const ListWrapper = styled.article`
   ${lightNeumorph};
 
   h3 {
-    font-weight: 300;
+    font-weight: 400;
   }
 `;
