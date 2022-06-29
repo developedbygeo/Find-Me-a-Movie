@@ -28,3 +28,11 @@ export const body = css`
   color: rgb(${({ theme }) => theme.colors.white});
   letter-spacing: 0.15rem;
 `;
+
+export const descriptionStyle = css`
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0.175rem;
+  color: rgba(${({ theme }) => theme.colors.white}, 0.85);
+  font-weight: ${({ theme }) => theme.typography.weights.regular};
+`;
