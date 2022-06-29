@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { flexMixin } from '@/shared/mixins';
 import { lightNeumorph } from '@/shared/neumorphic';
+import { descriptionStyle } from '@/shared/typography';
 import { customScrollbar } from '@/shared/mixins';
 
 export const ReviewsContainer = styled.ul`
@@ -32,9 +33,7 @@ export const StyledReview = styled.li`
     padding: 1rem;
     max-height: 40rem;
     overflow-y: auto;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.8;
-    letter-spacing: 0.175rem;
+    ${descriptionStyle};
     ${customScrollbar};
   }
 `;
