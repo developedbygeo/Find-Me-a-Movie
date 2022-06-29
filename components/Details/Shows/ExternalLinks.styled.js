@@ -12,7 +12,7 @@ export const LinkWrapper = styled.article`
 
   h3 {
     position: relative;
-    font-weight: 300;
+    font-weight: 400;
     z-index: 15;
   }
 `;
