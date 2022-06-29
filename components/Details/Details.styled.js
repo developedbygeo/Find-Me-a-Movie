@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { flexMixin, gridMixin, ratingColor } from '@/shared/mixins';
 import { tagNeumorph } from '@/shared/neumorphic';
+import { descriptionStyle } from '@/shared/typography';
 
 export const SimpleDescription = styled.article`
   width: 90%;
@@ -43,11 +44,7 @@ export const StyledDescription = styled.article`
 
 export const StyledText = styled.article`
   p {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: ${({ theme }) => theme.typography.weights.regular};
-    color: rgba(${({ theme }) => theme.colors.white}, 0.85);
-    letter-spacing: 0.175rem;
-    line-height: 1.85;
+    ${descriptionStyle};
   }
 `;
 
