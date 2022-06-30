@@ -9,7 +9,7 @@ import {
 
 import { getDetailClassname } from '@/utils/data-utils';
 
-const Description = ({ title, tagline, overview, rating, genres, isSeasonDetails }) => {
+const Description = ({ title, tagline, overview, rating, votes, genres, isSeasonDetails, runtime }) => {
   const ratingClassName = useMemo(() => getDetailClassname(+rating), [rating]);
 
   if (isSeasonDetails) {
@@ -28,17 +28,24 @@ const Description = ({ title, tagline, overview, rating, genres, isSeasonDetails
       <StyledTitleCont>
         <h1>{title}</h1>
         <h2>{tagline}</h2>
-        <StyledRating>
+        {runtime && (
+          <p className="runtime">
+            <span>{runtime}</span> minutes
+          </p>
+        )}
+        <StyledRating title={`Out of ${votes} votes`}>
           <p>
             <span className={ratingClassName}>{rating}</span> / 10
           </p>
         </StyledRating>
       </StyledTitleCont>
-      <ul>
-        {genres.map((genre) => (
-          <li key={genre.id}>{genre.name}</li>
-        ))}
-      </ul>
+      {genres && (
+        <ul>
+          {genres.map((genre) => (
+            <li key={genre.id}>{genre.name}</li>
+          ))}
+        </ul>
+      )}
       <StyledText>
         <p>{overview}</p>
       </StyledText>
