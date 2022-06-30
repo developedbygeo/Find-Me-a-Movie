@@ -4,6 +4,7 @@ import { flexMixin } from '@/shared/mixins';
 import { headingM } from '@/shared/typography';
 
 export const StyledDetails = styled.div`
+  pointer-events: none;
   width: 100%;
   height: 30%;
   padding: 5% 6%;
