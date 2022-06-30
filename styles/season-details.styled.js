@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { StyledPage } from './content.styled';
 
 export const StyledSeasonDetails = styled(StyledPage)`
-  padding-block: 5%;
+  padding-block: 2.5%;
   gap: 1rem;
   .img-cont {
     position: relative;
