@@ -31,6 +31,7 @@ const SeriesDetails = ({ id, platform }) => {
   let videoId;
   let recommendedContent;
 
+  // TODO video is coming from the optionaldetails api route
   if (video) videoId = getVideoId(video.results);
   if (recommended) recommendedContent = recommended.results.slice(0, 10);
 
@@ -43,6 +44,7 @@ const SeriesDetails = ({ id, platform }) => {
         tagline={data.tagline}
         overview={data.overview || ''}
         rating={data.vote_average}
+        votes={data.vote_count}
         genres={data.genres}
       />
       <YoutubeVideo videoId={videoId} title={title} />
