@@ -18,7 +18,7 @@ const SeasonDetails = ({ details }) => {
   return (
     <StyledSeasonDetails>
       <div className="img-cont">
-        <Image src={image} alt={details.name} layout="fill" objectFit="cover" />
+        <Image src={image} alt={details.name} layout="fill" objectFit="cover" priority />
       </div>
       <Description title={details.name} overview={details.overview} isSeasonDetails />
       <Stats episodes={details.episodes} />
@@ -37,5 +37,7 @@ export async function getServerSideProps(ctx) {
     },
   };
 }
+
+SeasonDetails.backButton = true;
 
 export default SeasonDetails;
