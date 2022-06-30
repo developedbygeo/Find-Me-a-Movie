@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { flexMixin, gridMixin, ratingColor } from '@/shared/mixins';
-import { tagNeumorph } from '@/shared/neumorphic';
+import { lightNeumorph, tagNeumorph } from '@/shared/neumorphic';
 import { descriptionStyle } from '@/shared/typography';
 
 export const SimpleDescription = styled.article`
@@ -9,6 +9,7 @@ export const SimpleDescription = styled.article`
   margin-inline: auto;
   ${flexMixin('center', 'flex-start', 'column')};
   gap: 2.5rem;
+  margin-top: 2.5vh;
 
   & > article {
     display: block;
@@ -79,6 +80,14 @@ export const StyledTitleCont = styled.article`
     height: 100%;
     grid-area: 1/2/3/3;
   }
-`;
 
-export const StyledMDetails = styled.article``;
+  .runtime {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: rgba(${({ theme }) => theme.colors.white}, 0.65);
+
+    span {
+      color: rgb(${({ theme }) => theme.colors.textHighlight});
+    }
+  }
+`;
