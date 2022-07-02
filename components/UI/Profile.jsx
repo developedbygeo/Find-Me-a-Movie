@@ -1,11 +1,12 @@
 import Image from 'next/image';
 
+import { UnstyledButton } from './Buttons.styled';
 import { ProfileContainer, ImageWrapper } from './Profile.styled';
 import { MdPersonOutline } from 'react-icons/md';
 
-const Profile = ({ image }) => {
+const Profile = ({ image, onProfileClick }) => {
   return (
-    <ProfileContainer>
+    <UnstyledButton onClick={onProfileClick} title="Your profile">
       <ImageWrapper>
         {image ? (
           <Image src={image} alt="Profile" title="Profile" layout="fill" draggable="false" />
@@ -13,7 +14,7 @@ const Profile = ({ image }) => {
           <MdPersonOutline />
         )}
       </ImageWrapper>
-    </ProfileContainer>
+    </UnstyledButton>
   );
 };
 
