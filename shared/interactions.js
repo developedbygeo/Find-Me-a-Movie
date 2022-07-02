@@ -23,3 +23,15 @@ export const interactLink = css`
     }
   }
 `;
+
+export const interactHoverButton = css`
+  transition: all 150ms ease-in;
+
+  @media (hover: hover) {
+    &:hover {
+      & > svg {
+        color: rgb(${({ theme }) => theme.colors.textHighlight});
+      }
+    }
+  }
+`;
