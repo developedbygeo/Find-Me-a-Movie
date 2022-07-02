@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { flexMixin, gridMixin } from '@/shared/mixins';
+import { interactHoverButton } from '@/shared/interactions';
 
 export const LogoContainer = styled.div`
   position: relative;
@@ -15,4 +16,10 @@ export const StyledHeader = styled.header`
   ${gridMixin('auto 1fr 0.15fr', '1fr')};
   place-items: center;
   padding-inline: 5%;
+
+  /* profile button */
+  & > button {
+    padding: 0;
+    ${interactHoverButton}
+  }
 `;
