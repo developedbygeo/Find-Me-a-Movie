@@ -1,10 +1,18 @@
 import Image from 'next/image';
+import { useReducer } from 'react';
 
+import Modal from '@/UI/Modal/Modal';
+import ComingSoon from '../UI/Modal/ComingSoon';
 import Nav from './Nav';
+
 import { StyledHeader, LogoContainer } from './Header.styled';
 import Profile from '@/UI/Profile';
 
 const Header = () => {
+  const [showProfile, setShowProfile] = useReducer((state) => !state, false);
+
+  const toggleProfileHandler = () => setShowProfile();
+
   return (
     <StyledHeader>
       <LogoContainer>
@@ -18,7 +26,12 @@ const Header = () => {
         />
       </LogoContainer>
       <Nav />
-      <Profile />
+      <Profile onProfileClick={toggleProfileHandler} />
+      {showProfile && (
+        <Modal onDisable={toggleProfileHandler}>
+          <ComingSoon onDisable={toggleProfileHandler} />
+        </Modal>
+      )}
     </StyledHeader>
   );
 };
