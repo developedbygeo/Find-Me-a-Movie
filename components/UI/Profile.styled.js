@@ -1,25 +1,19 @@
 import styled from 'styled-components';
 
 import { flexMixin } from '@/shared/mixins';
-
-export const ProfileContainer = styled.div`
-  height: 100%;
-  width: 100%;
-  ${flexMixin('center', 'center', 'column')};
-`;
+import { interactHoverButton } from '@/shared/interactions';
 
 export const ImageWrapper = styled.div`
   position: relative;
+  height: 100%;
   width: 100%;
-  height: 80%;
   margin: auto;
-  max-height: 10vh;
-  ${flexMixin('center', 'center', 'column')};
+  ${flexMixin('center', 'center', 'row')};
 
   svg {
-    color: rgb(${({ theme }) => theme.colors.white});
-    width: 80%;
+    transition: all 150ms ease-in;
+    color: rgb(${({ theme }) => theme.colors.secondary});
     height: 100%;
-    align-self: flex-end;
+    width: 100%;
   }
 `;
