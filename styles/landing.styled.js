@@ -14,7 +14,6 @@ export const StyledLanding = styled.section`
 
 export const StyledTrending = styled(ArticleCont)`
   height: 45vh;
-  margin-top: 3rem;
   ${flexMixin('space-around', 'flex-start', 'column')};
 
   h1 {
