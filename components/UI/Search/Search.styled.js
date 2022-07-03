@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { flexMixin } from '@/shared/mixins';
+import { flexMixin, InputStyle } from '@/shared/mixins';
 import { highlightFocus } from '@/shared/interactions';
 
 export const StyledWrapper = styled.div`
@@ -18,12 +18,7 @@ export const StyledWrapper = styled.div`
   }
 
   input {
-    background: transparent;
-    border: 0;
-    border-radius: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    color: rgba(${({ theme }) => theme.colors.white}, 0.8);
-    ${highlightFocus};
+    ${InputStyle};
   }
 
   input {
