@@ -1,5 +1,7 @@
 import { css } from 'styled-components';
 
+import { highlightFocus } from './interactions';
+
 export const gridMixin = (columns, rows, gap) => css`
   display: grid;
   grid-template-columns: ${columns};
@@ -55,4 +57,13 @@ export const ratingColor = css`
   .negative {
     color: rgb(${({ theme }) => theme.colors.ratingNegative});
   }
+`;
+
+export const InputStyle = css`
+  background: transparent;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  color: rgba(${({ theme }) => theme.colors.white}, 0.8);
+  ${highlightFocus};
 `;
