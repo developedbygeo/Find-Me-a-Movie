@@ -1,6 +1,6 @@
 import { StyledSelect } from './CustomSelect.styled';
 
-const CustomSelect = ({ options, ...props }) => {
+const CustomSelect = ({ options, selectId, ...props }) => {
   return (
     <StyledSelect>
       <select {...props}>
