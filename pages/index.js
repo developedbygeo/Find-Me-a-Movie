@@ -30,4 +30,6 @@ export const getStaticProps = async () => {
   };
 };
 
+Home.searchGeneric = true;
+
 export default Home;
