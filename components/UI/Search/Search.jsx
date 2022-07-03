@@ -1,9 +1,17 @@
 import { useState } from 'react';
 
+import Select from 'react-select';
+
 import CustomSelect from './CustomSelect';
 import { StyledWrapper } from './Search.styled';
 import { UnstyledButton } from '../Buttons.styled';
 import { BiSearchAlt } from 'react-icons/bi';
+
+const customStyling = {
+  options: (provided, state) => ({
+    ...provided,
+  }),
+};
 
 const selectOptions = [
   { label: 'Movie', value: 'movie' },
@@ -11,6 +19,7 @@ const selectOptions = [
 ];
 
 const Search = ({ showCategories }) => {
+  const [selectVal, setSelectVal] = useState(selectOptions[0]);
   const formSubmitHandler = (e) => {
     e.preventDefault();
   };
@@ -27,7 +36,8 @@ const Search = ({ showCategories }) => {
           aria-label="Search for movies or TV series"
           name="searchQuery"
         />
-        {showCategories && <CustomSelect options={selectOptions} name="searchType" />}
+        {/* {showCategories && <CustomSelect options={selectOptions} name="searchType" />} */}
+        {showCategories && <Select value={selectVal} options={selectOptions} isSearchable={false} />}
       </form>
     </StyledWrapper>
   );
