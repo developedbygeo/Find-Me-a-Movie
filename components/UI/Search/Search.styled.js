@@ -15,10 +15,20 @@ export const StyledWrapper = styled.div`
     width: 100%;
     border: 0;
     ${flexMixin('center', 'center', 'row')};
+    gap: 1rem;
   }
 
   input {
     ${InputStyle};
+    padding: 1.25rem 2rem;
+    &::placeholder {
+      font-size: 1.7rem;
+    }
+    @media (hover: hover) {
+      &:hover {
+        background: rgb(${({ theme }) => theme.colors.primary});
+      }
+    }
   }
 
   input {
