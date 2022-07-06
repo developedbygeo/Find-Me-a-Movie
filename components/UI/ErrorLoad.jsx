@@ -4,7 +4,7 @@ import { StyledPage } from '@/styles/content.styled';
 import LoadingSpinner from './LoadingSpinner';
 import { HiOutlineEmojiSad } from 'react-icons/hi';
 
-const ErrorLoad = ({ error, data, children, isSubComponent, ogComponent }) => {
+const ErrorLoad = ({ error, data, children, isSubComponent, ogComponent, className }) => {
   if (error && isSubComponent) {
     return (
       <StyledErrLoad className="err">
@@ -38,7 +38,7 @@ const ErrorLoad = ({ error, data, children, isSubComponent, ogComponent }) => {
     );
   }
 
-  return <StyledPage>{children}</StyledPage>;
+  return <StyledPage className={className}>{children}</StyledPage>;
 };
 
 export default ErrorLoad;
