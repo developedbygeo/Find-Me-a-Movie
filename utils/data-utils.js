@@ -5,7 +5,10 @@ export const getAmbiguousProperty = (...args) => args.find((arg) => arg);
 
 export const getTrendingSlice = (arr, start, end) => arr.slice(start, end);
 
-export const getImage = (path, size = 'w500') => `https://image.tmdb.org/t/p/${size}${path}`;
+export const getImage = (path, size = 'w500') => {
+  if (path) return `https://image.tmdb.org/t/p/${size}${path}`;
+  return null;
+};
 
 export const getGenre = (id, platform) => {
   if (!platform) return undefined;
