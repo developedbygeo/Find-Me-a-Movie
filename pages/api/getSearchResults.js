@@ -1,7 +1,6 @@
 export default async function handler(req, res) {
-  if (req.method === 'POST') {
-    const { title, platform } = req.body;
-
+  const { title, platform } = req.query;
+  if (req.method === 'GET') {
     if (!title || !platform) return res.status(400).json({ error: 'Missing required fields' });
 
     try {
