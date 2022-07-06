@@ -2,9 +2,6 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Select from 'react-select';
 
-import useSWR from 'swr';
-import { fetcher } from '@/utils/api-utils';
-
 import { StyledWrapper } from './Search.styled';
 import { UnstyledButton } from '../Buttons.styled';
 import { BiSearchAlt } from 'react-icons/bi';
@@ -20,20 +17,9 @@ const Search = ({ showCategories }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const router = useRouter();
 
-  // TODO redirect to search page with a list of results and then generate dynamic paths
   const formSubmitHandler = async (e) => {
     e.preventDefault();
-    const res = await fetch('/api/getSearchResults', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        title: encodeURIComponent(searchTerm),
-        platform: selectVal.value,
-      }),
-    });
-    if (!res.ok) return;
-    const data = await res.json();
-    console.log(data);
+    router.push(`/search?search=${searchTerm}&platform=${selectVal.value}`);
   };
 
   const selectGenreHandler = () =>
@@ -62,6 +48,8 @@ const Search = ({ showCategories }) => {
             value={selectVal}
             options={selectOptions}
             isSearchable={false}
+            id="movie-finder-app-select"
+            instanceId="movie-finder-app-select"
           />
         )}
       </form>
