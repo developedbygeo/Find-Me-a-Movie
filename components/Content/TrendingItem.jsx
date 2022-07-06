@@ -36,8 +36,8 @@ const TrendingItem = ({ movie, priority, platformAssist, ext, ...props }) => {
             <Image
               priority={priority}
               placeholder="blur"
-              blurDataURL={parsedData.image}
-              src={parsedData.image}
+              blurDataURL={parsedData.image || '/content/poster-404.webp'}
+              src={parsedData.image || '/content/poster-404.webp'}
               title={title}
               alt={title}
               draggable="false"
