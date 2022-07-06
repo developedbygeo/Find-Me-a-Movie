@@ -8,7 +8,7 @@ const Details = ({ title, date, platform, ...props }) => {
     <StyledDetails {...props}>
       <div className="details">
         <p>
-          <span className="date">{date} </span>
+          <span className="date">{date || 'No date'} </span>
           <span>&bull; </span>
           <span className={`icon ${platform === 'tv' ? 'tv' : 'movie'}`}>
             {icon} {platform}
