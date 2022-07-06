@@ -19,6 +19,10 @@ export const StyledPage = styled(StyledLanding)`
   h3 {
     padding-block: 1rem;
   }
+
+  &.search {
+    grid-template-rows: auto;
+  }
 `;
 
 export const StyledLoading = styled.section`
