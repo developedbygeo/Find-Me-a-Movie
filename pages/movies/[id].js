@@ -27,8 +27,6 @@ const MovieDetails = ({ platform, id }) => {
   let recommendedContent;
   const title = getDetailTitle(data, 'title', 'original_title');
 
-  console.log(data);
-
   if (video) videoId = getVideoId(video.results);
   if (recommended) recommendedContent = recommended.results.slice(0, 10);
 
