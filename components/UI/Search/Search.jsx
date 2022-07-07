@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Select from 'react-select';
 
@@ -8,14 +8,28 @@ import { BiSearchAlt } from 'react-icons/bi';
 import { customStyles } from './Select.styled';
 
 const selectOptions = [
-  { label: 'Movie', value: 'movie', slug: 'movies' },
-  { label: 'TV Show', value: 'tv', slug: 'tv-series' },
+  { label: 'Movie', value: 'movie', slug: 'movies', placeholder: 'Search for more movies' },
+  { label: 'TV Show', value: 'tv', slug: 'tv-series', placeholder: 'Search for more TV shows' },
 ];
 
-const Search = ({ showCategories }) => {
-  const [selectVal, setSelectVal] = useState(selectOptions[0]);
-  const [searchTerm, setSearchTerm] = useState('');
+const platformLookup = {
+  searchMovies: selectOptions[0],
+  searchTv: selectOptions[1],
+};
+
+const Search = ({ showCategories, defaultPlatformQuery, defaultPlaceholder }) => {
   const router = useRouter();
+  const { route } = router;
+  const defaultValue = platformLookup[defaultPlatformQuery];
+  const [selectVal, setSelectVal] = useState(defaultValue || selectOptions[0]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const inputPlaceholder = defaultPlaceholder || selectVal.placeholder;
+
+  useEffect(() => {
+    if (defaultPlatformQuery && route) {
+      setSelectVal(platformLookup[defaultPlatformQuery]);
+    }
+  }, [defaultPlatformQuery, route]);
 
   const formSubmitHandler = async (e) => {
     e.preventDefault();
@@ -37,7 +51,7 @@ const Search = ({ showCategories }) => {
           value={searchTerm}
           onChange={searchTermHandler}
           type="text"
-          placeholder="Search for movies or TV series"
+          placeholder={inputPlaceholder}
           aria-label="Search for movies or TV series"
           name="searchQuery"
         />
