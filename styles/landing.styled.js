@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import { ArticleCont } from '@/UI/Container.styled';
 import { flexMixin, gridMixin } from '@/shared/mixins';
+import { widthMQ } from '@/shared/mediaQueries';
+import devices from '@/shared/breakpoints';
 
 export const StyledLanding = styled.section`
   height: auto;
@@ -19,6 +21,12 @@ export const StyledTrending = styled(ArticleCont)`
   h1 {
     padding: 5% 0 0 5%;
   }
+
+  @media ${devices.tablet} {
+    h1 {
+      padding: 5% 0 0 7.5%;
+    }
+  }
 `;
 
 export const StyledRecommended = styled(ArticleCont)`
@@ -31,6 +39,8 @@ export const StyledRecommended = styled(ArticleCont)`
   h1 {
     padding-block: 2.5%;
   }
+
+  ${widthMQ};
 `;
 
 export const GalleryWrapper = styled.article`
