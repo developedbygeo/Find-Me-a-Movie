@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
-import { flexMixin, gridMixin } from '@/shared/mixins';
+import { gridMixin } from '@/shared/mixins';
 import { interactHoverButton } from '@/shared/interactions';
+import devices from '@/shared/breakpoints';
 
 export const LogoContainer = styled.div`
   position: relative;
@@ -21,5 +22,9 @@ export const StyledHeader = styled.header`
   & > button {
     padding: 0;
     ${interactHoverButton}
+  }
+
+  @media ${devices.tablet} {
+    padding-inline: 7.5%;
   }
 `;
