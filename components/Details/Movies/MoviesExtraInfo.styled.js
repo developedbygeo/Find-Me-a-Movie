@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { flexMixin, gridMixin } from '@/shared/mixins';
 import { lightNeumorph } from '@/shared/neumorphic';
+import { widthMQ } from '@/shared/mediaQueries';
 
 export const StyledDetails = styled.article`
   width: 90%;
@@ -21,6 +22,8 @@ export const StyledDetails = styled.article`
   h3 {
     text-align: center;
   }
+
+  ${widthMQ};
 `;
 
 export const StyledMDetails = styled.ul`
