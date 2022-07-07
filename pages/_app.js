@@ -6,7 +6,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       {Component.backButton && <BackButton />}
-      {Component.searchGeneric ? <Search showCategories /> : <Search />}
+      {Component.searchGeneric && (
+        <Search showCategories defaultPlaceholder="Search for movies or TV shows" />
+      )}
+      {Component.simpleSearch && <Search defaultPlatformQuery={Component.defaultPlatformQuery} />}
       <Component {...pageProps} />
     </Layout>
   );
