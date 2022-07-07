@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { flexMixin, InputStyle } from '@/shared/mixins';
-import { highlightFocus } from '@/shared/interactions';
+import { widthMQ } from '@/shared/mediaQueries';
 
 export const StyledWrapper = styled.div`
   height: auto;
@@ -46,5 +46,9 @@ export const StyledWrapper = styled.div`
     svg {
       font-size: 2.5rem;
     }
+  }
+
+  form {
+    ${widthMQ};
   }
 `;
