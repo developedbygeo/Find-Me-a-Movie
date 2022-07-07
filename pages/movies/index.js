@@ -24,4 +24,7 @@ export const getStaticProps = async () => {
   };
 };
 
+Movies.simpleSearch = true;
+Movies.defaultPlatformQuery = 'searchMovies';
+
 export default Movies;
