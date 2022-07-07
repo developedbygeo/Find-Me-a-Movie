@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { widthMQ } from '@/shared/mediaQueries';
+
 export const StyledVideo = styled.div`
   overflow: hidden;
   padding-bottom: 56.25%;
@@ -15,4 +17,5 @@ export const StyledVideo = styled.div`
     width: 100%;
     height: 100%;
   }
+  ${widthMQ};
 `;
