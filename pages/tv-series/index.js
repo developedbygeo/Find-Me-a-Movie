@@ -24,4 +24,7 @@ export const getStaticProps = async () => {
   };
 };
 
+TvSeries.simpleSearch = true;
+TvSeries.defaultPlatformQuery = 'searchTv';
+
 export default TvSeries;
