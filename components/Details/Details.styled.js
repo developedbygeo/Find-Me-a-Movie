@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { flexMixin, gridMixin, ratingColor } from '@/shared/mixins';
 import { lightNeumorph, tagNeumorph } from '@/shared/neumorphic';
 import { descriptionStyle } from '@/shared/typography';
+import { widthMQ } from '@/shared/mediaQueries';
 
 export const SimpleDescription = styled.article`
   width: 90%;
@@ -41,6 +42,8 @@ export const StyledDescription = styled.article`
     letter-spacing: 0.175rem;
     ${tagNeumorph};
   }
+
+  ${widthMQ};
 `;
 
 export const StyledText = styled.article`
