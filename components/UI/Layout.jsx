@@ -2,13 +2,16 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from '@/shared/globalStyle';
 import Header from '@/components/Header/Header';
 import appTheme from '@/shared/theme';
+import { StyledLayout } from './Layout.styled';
 
 const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={appTheme}>
       <GlobalStyle />
-      <Header />
-      <main>{children}</main>
+      <StyledLayout>
+        <Header />
+        <main>{children}</main>
+      </StyledLayout>
     </ThemeProvider>
   );
 };
