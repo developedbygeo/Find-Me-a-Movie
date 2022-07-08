@@ -27,6 +27,11 @@ export const StyledTrending = styled(ArticleCont)`
       padding: 5% 0 0 7.5%;
     }
   }
+  @media ${devices.laptop} {
+    h1 {
+      padding: 0;
+    }
+  }
 `;
 
 export const StyledRecommended = styled(ArticleCont)`
@@ -40,7 +45,18 @@ export const StyledRecommended = styled(ArticleCont)`
     padding-block: 2.5%;
   }
 
-  ${widthMQ};
+  @media ${devices.laptop} {
+    width: 100%;
+
+    &.landing-recommended {
+      & > ul {
+        margin: initial;
+        width: 85%;
+        grid-template-columns: repeat(5, 1fr);
+        min-height: auto;
+      }
+    }
+  }
 `;
 
 export const GalleryWrapper = styled.article`
