@@ -20,8 +20,10 @@ const Header = () => {
           src={'/assets/logo.svg'}
           alt="logo"
           title="Find Me a Movie"
-          layout="fill"
+          layout="responsive"
           draggable="false"
+          width={100}
+          height={100}
           priority
         />
       </LogoContainer>
