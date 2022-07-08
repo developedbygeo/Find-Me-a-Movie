@@ -10,7 +10,7 @@ const Home = ({ trending, restTrending }) => {
   return (
     <StyledLanding>
       <Trending trendingData={trending} />
-      <List content={restTrending} title={'Recommended Content'} />
+      <List content={restTrending} title={'Recommended Content'} className="landing-recommended" />
     </StyledLanding>
   );
 };
