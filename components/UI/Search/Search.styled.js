@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import devices from '@/shared/breakpoints';
 import { flexMixin, InputStyle } from '@/shared/mixins';
 import { widthMQ } from '@/shared/mediaQueries';
 
@@ -50,5 +51,10 @@ export const StyledWrapper = styled.div`
 
   form {
     ${widthMQ};
+  }
+
+  @media ${devices.laptop} {
+    padding-block: 2%;
+    width: 45%;
   }
 `;
