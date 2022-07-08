@@ -6,8 +6,8 @@ import devices from '@/shared/breakpoints';
 
 export const LogoContainer = styled.div`
   position: relative;
-  height: 4vh;
-  width: 8vw;
+  height: auto;
+  width: 5rem;
 `;
 
 export const StyledHeader = styled.header`
