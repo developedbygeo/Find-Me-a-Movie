@@ -29,7 +29,7 @@ export const StyledLayout = styled.div`
     }
 
     main {
-      margin-left: 10vw;
+      margin-left: 12.5vw;
     }
   }
 `;
