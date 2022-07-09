@@ -31,7 +31,7 @@ const MovieDetails = ({ platform, id }) => {
   if (recommended) recommendedContent = recommended.results.slice(0, 10);
 
   return (
-    <ErrorLoad error={undefined} data={1}>
+    <ErrorLoad error={undefined} data={1} className="movie-details">
       {/* <ErrorLoad error={error} data={data}> */}
       <FeaturedImage backdropURL={data.backdrop_path} title={title} />
       <Description
