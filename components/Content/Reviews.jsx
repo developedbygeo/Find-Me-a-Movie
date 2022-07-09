@@ -1,8 +1,8 @@
 import { ReviewsContainer, StyledReview } from './Reviews.styled';
 
-const Reviews = ({ reviewsArray }) => {
+const Reviews = ({ reviewsArray, ...props }) => {
   return (
-    <ReviewsContainer>
+    <ReviewsContainer {...props}>
       <h3>User Reviews</h3>
       {reviewsArray.map((review) => {
         return (
