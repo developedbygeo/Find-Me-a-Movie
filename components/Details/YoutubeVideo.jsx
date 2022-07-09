@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { StyledVideo } from './YoutubeVideo.styled';
 
-const YoutubeVideo = ({ videoId, videoTitle }) => {
+const YoutubeVideo = ({ videoId, videoTitle, ...props }) => {
   let [currLocation, setCurrLocation] = useState(null);
 
   useEffect(() => {
@@ -11,7 +11,7 @@ const YoutubeVideo = ({ videoId, videoTitle }) => {
   }, []);
 
   return (
-    <StyledVideo>
+    <StyledVideo {...props}>
       <iframe
         type="text/html"
         width="853"
