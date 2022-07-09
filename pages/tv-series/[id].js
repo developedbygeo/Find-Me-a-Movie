@@ -35,10 +35,17 @@ const SeriesDetails = ({ id, platform }) => {
   if (video) videoId = getVideoId(video.results);
   if (recommended) recommendedContent = recommended.results.slice(0, 10);
 
+  console.log(data);
+
   return (
     // <ErrorLoad error={error} data={data}>
-    <ErrorLoad error={undefined} data={1}>
-      <FeaturedImage backdropURL={data.backdrop_path} title={title} />
+    <ErrorLoad error={undefined} data={1} className="tv-details">
+      <FeaturedImage
+        backdropURL={data.backdrop_path}
+        poster={data.poster_path}
+        title={title}
+        className="detail-image"
+      />
       <Description
         title={title}
         tagline={data.tagline}
@@ -46,11 +53,18 @@ const SeriesDetails = ({ id, platform }) => {
         rating={data.vote_average}
         votes={data.vote_count}
         genres={data.genres}
+        className="detail-description"
       />
-      <YoutubeVideo videoId={videoId} title={title} />
-      <Reviews reviewsArray={reviews.results} />
-      <ExternalLinks links={externals} />
-      <SeasonList title={title} showId={id} seasons={data.seasons} shouldHaveButtons />
+      <YoutubeVideo videoId={videoId} title={title} className="detail-video" />
+      <Reviews reviewsArray={reviews.results} className="detail-reviews" />
+      <ExternalLinks links={externals} className="detail-links" />
+      <SeasonList
+        title={title}
+        showId={id}
+        seasons={data.seasons}
+        shouldHaveButtons
+        className="detail-seasons"
+      />
       <List content={recommendedContent} title="You may also like..." titleAs="h3" className="recommended" />
     </ErrorLoad>
   );
