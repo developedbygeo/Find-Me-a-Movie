@@ -46,7 +46,7 @@ export const StyledLinks = styled.div`
       &.twitter {
         color: #1da1f2;
       }
-      &.instagram {
+      &.instagram svg {
         background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%),
           radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
           radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
@@ -59,6 +59,20 @@ export const StyledLinks = styled.div`
       }
       &.imdb {
         color: #ffc107;
+      }
+
+      &.desktop-link {
+        p {
+          position: relative;
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: calc(-0.25rem - 0.2rem);
+            width: 100%;
+            height: 0.2rem;
+            background: rgb(${({ theme }) => theme.colors.white});
+          }
+        }
       }
     }
   }
