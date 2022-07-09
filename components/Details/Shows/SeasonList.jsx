@@ -20,20 +20,21 @@ const mobileSlider = {
 const desktopSlider = {
   ...mobileSlider,
   slides: {
-    perView: 2.3,
+    perView: 3,
+    spacing: 15,
   },
 };
 
-const SeasonList = ({ title, showId, seasons, shouldHaveButtons }) => {
+const SeasonList = ({ title, showId, seasons, shouldHaveButtons, ...props }) => {
   const window = useWindow();
   const settings = window > 1150 ? desktopSlider : mobileSlider;
   const { ref, slider, currentSlide, load } = useSlider(settings);
   const isSliderReady = load && slider.current;
 
   return (
-    <ListWrapper>
+    <ListWrapper {...props}>
       <h3>Available Seasons</h3>
-      <GalleryWrapper as="div">
+      <GalleryWrapper as="div" className="slider-wrapper">
         <ul
           className="keen-slider"
           ref={ref}
