@@ -1,5 +1,6 @@
 import data from '@/mock/movie-details.json';
 import video from '@/mock/video-movie.json';
+import reviews from '@/mock/reviews-movie.json';
 import recommended from '@/mock/recommended-movie.json';
 
 import useSWR from 'swr';
@@ -33,7 +34,12 @@ const MovieDetails = ({ platform, id }) => {
   return (
     <ErrorLoad error={undefined} data={1} className="movie-details">
       {/* <ErrorLoad error={error} data={data}> */}
-      <FeaturedImage backdropURL={data.backdrop_path} title={title} />
+      <FeaturedImage
+        backdropURL={data.backdrop_path}
+        poster={data.poster_path}
+        title={title}
+        className="detail-image"
+      />
       <Description
         title={title}
         tagline={data.tagline}
@@ -42,10 +48,17 @@ const MovieDetails = ({ platform, id }) => {
         rating={data.vote_average}
         votes={data.vote_count}
         genres={data.genres}
+        className="detail-description"
       />
-      <MovieExtraInfo budget={data.budget} revenue={data.revenue} />
-      <YoutubeVideo videoId={videoId} title={title} />
-      <List content={recommendedContent} title="You may also like..." titleAs="h3" className="recommended" />
+      <MovieExtraInfo budget={data.budget} revenue={data.revenue} className="detail-movie-extra" />
+      <YoutubeVideo videoId={videoId} title={title} className="detail-video" />
+      <Reviews reviewsArray={reviews.results} className="detail-reviews" />
+      <List
+        content={recommendedContent}
+        title="You may also like..."
+        titleAs="h3"
+        className="recommended detail-similar"
+      />
     </ErrorLoad>
   );
 };
