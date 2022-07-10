@@ -25,35 +25,52 @@ export const StyledPage = styled(StyledLanding)`
     grid-template-rows: auto;
   }
 
-  /* TODO pass the same classNames to movie details */
-
   @media ${devices.laptop} {
     &.tv-details,
     &.movie-details {
       grid-template-columns: auto;
       margin: initial;
-      width: 85%;
+      width: 75%;
+      margin-inline: auto;
       padding: 2.5% 0 2.5% 0;
-      margin-right: 15%;
 
       .detail-image {
         grid-area: 1/1/1/2;
         width: 70%;
-        min-height: 50vh;
-        min-width: 25vw;
+        min-height: 45vh;
+        min-width: 15vw;
         align-self: flex-start;
       }
 
       .detail-description {
         width: auto;
+        max-width: 100%;
         grid-area: 1/2/1/3;
         align-self: center;
         justify-self: flex-start;
+        padding-right: 7.5%;
       }
 
       .detail-reviews {
-        width: auto;
+        width: 55%;
         grid-area: 2/1/2/3;
+        align-self: flex-start;
+        margin: 0;
+      }
+
+      .detail-movie-extra {
+        justify-content: space-evenly;
+        align-self: flex-start;
+        padding: 2rem 4.25rem;
+        width: max-content;
+        margin: 0;
+        gap: 2.5rem;
+        min-height: 30vh;
+        ul {
+          flex-direction: column;
+          gap: 2.5rem;
+          width: auto;
+        }
       }
 
       .detail-links {
@@ -85,7 +102,8 @@ export const StyledPage = styled(StyledLanding)`
         border-radius: 3rem;
       }
 
-      .detail-seasons {
+      .detail-seasons,
+      .detail-similar {
         grid-area: 4/1/4/3;
         width: 85vw;
 
