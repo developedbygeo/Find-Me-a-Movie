@@ -35,3 +35,14 @@ export const interactHoverButton = css`
     }
   }
 `;
+
+export const interactiveButton = css`
+  transition: all 150ms ease-in;
+
+  @media (hover: hover) {
+    &:hover {
+      background: rgba(${({ theme }) => theme.colors.accent});
+      color: rgb(${({ theme }) => theme.colors.white});
+    }
+  }
+`;
