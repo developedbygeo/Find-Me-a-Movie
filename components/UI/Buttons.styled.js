@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 import { resetDefaults } from '@/shared/mixins';
-import { highlightFocus } from '@/shared/interactions';
-import { lightNeumorph } from '@/shared/neumorphic';
+import { highlightFocus, interactiveButton } from '@/shared/interactions';
+import { lightNeumorph, tagNeumorph } from '@/shared/neumorphic';
 import { flexMixin } from '@/shared/mixins';
 
 export const UnstyledButton = styled.button`
@@ -29,5 +29,18 @@ export const StyledBackButton = styled(UnstyledButton)`
   svg {
     font-size: 3rem;
     pointer-events: none;
+  }
+`;
+
+export const ReviewButton = styled(StyledBackButton)`
+  width: 20rem;
+  height: 10rem;
+  margin: inherit;
+  border-radius: 1.25rem;
+  ${tagNeumorph}
+  ${interactiveButton};
+
+  &:focus {
+    border-radius: 1.5rem;
   }
 `;
