@@ -3,9 +3,9 @@ import { formatCurrency } from '@/utils/data-utils';
 import { StyledMDetails, StyledDetails } from './MoviesExtraInfo.styled';
 import { GiPayMoney, GiReceiveMoney } from 'react-icons/gi';
 
-const MovieExtraInfo = ({ budget, revenue }) => {
+const MovieExtraInfo = ({ budget, revenue, ...props }) => {
   return (
-    <StyledDetails>
+    <StyledDetails {...props}>
       <h2>Key Details</h2>
       <StyledMDetails>
         <li>
