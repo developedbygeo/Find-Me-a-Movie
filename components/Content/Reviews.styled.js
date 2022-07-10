@@ -36,4 +36,8 @@ export const StyledReview = styled.li`
     ${descriptionStyle};
     ${customScrollbar};
   }
+
+  button {
+    justify-self: center;
+  }
 `;
