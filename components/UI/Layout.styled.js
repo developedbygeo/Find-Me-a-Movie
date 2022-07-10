@@ -27,9 +27,5 @@ export const StyledLayout = styled.div`
         height: 100%;
       }
     }
-
-    main {
-      margin-left: 12.5vw;
-    }
   }
 `;
