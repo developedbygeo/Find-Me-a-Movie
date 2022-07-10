@@ -79,3 +79,8 @@ export const getVideoId = (videoArr) => {
   if (!videoArr) return '';
   return videoArr.find((el) => el.type === 'Trailer').key;
 };
+
+export const getCertainReviews = (reviewsArr, num = 2) => {
+  if (!reviewsArr) return [];
+  return reviewsArr.slice(0, num);
+};
