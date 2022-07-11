@@ -28,15 +28,15 @@ export const StyledPage = styled(StyledLanding)`
   @media ${devices.laptop} {
     &.tv-details,
     &.movie-details {
-      grid-template-columns: auto;
+      grid-template-columns: 0.5fr 1fr;
       margin: initial;
       width: 75%;
-      margin-inline: auto;
+      margin-inline: 17%;
       padding: 2.5% 0 2.5% 0;
 
       .detail-image {
         grid-area: 1/1/1/2;
-        width: 70%;
+        width: 85%;
         min-height: 45vh;
         min-width: 15vw;
         align-self: flex-start;
@@ -52,10 +52,14 @@ export const StyledPage = styled(StyledLanding)`
       }
 
       .detail-reviews {
-        width: 55%;
+        width: 100%;
         grid-area: 2/1/2/3;
         align-self: flex-start;
         margin: 0;
+
+        button {
+          align-self: center;
+        }
       }
 
       .detail-movie-extra {
@@ -74,7 +78,7 @@ export const StyledPage = styled(StyledLanding)`
       }
 
       .detail-links {
-        width: auto;
+        width: 85%;
         margin: initial;
         height: auto;
         justify-self: flex-start;
@@ -99,17 +103,19 @@ export const StyledPage = styled(StyledLanding)`
       .detail-video {
         grid-area: 3/2/3/3;
         width: 100%;
+        max-width: 50vw;
         border-radius: 3rem;
+        align-self: center;
       }
 
       .detail-seasons,
       .detail-similar {
         grid-area: 4/1/4/3;
-        width: 85vw;
+        width: 100%;
 
         & > .slider-wrapper {
-          width: 85vw;
-          height: 50vh;
+          width: 100%;
+          height: 40vh;
         }
 
         & > div:not(.slider-wrapper) {
