@@ -20,7 +20,7 @@ const mobileSlider = {
 const desktopSlider = {
   ...mobileSlider,
   slides: {
-    perView: 3,
+    perView: 4,
     spacing: 15,
   },
 };
@@ -61,7 +61,12 @@ const SeasonList = ({ title, showId, seasons, shouldHaveButtons, ...props }) => 
         </ul>
       </GalleryWrapper>
       {shouldHaveButtons && isSliderReady && (
-        <Controls slidesLength={seasons.length} slider={slider} currentSlide={currentSlide} />
+        <Controls
+          slidesLength={seasons.length}
+          slider={slider}
+          currentSlide={currentSlide}
+          disableDots={window > 1150}
+        />
       )}
     </ListWrapper>
   );
