@@ -131,6 +131,11 @@ export const StyledPage = styled(StyledLanding)`
         }
       }
     }
+    &.coming-soon {
+      width: 75%;
+      ${flexMixin('center', 'center', 'column')};
+      gap: 15rem;
+    }
   }
 `;
 
