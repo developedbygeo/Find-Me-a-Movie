@@ -23,7 +23,7 @@ const appTheme = {
       medium: 500,
     },
     sizes: {
-      headingL: '3rem',
+      headingL: '2.5rem',
       headingM: '2.25rem',
       headingS: '2rem',
       headingXS: '1.9rem',
