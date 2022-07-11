@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { StyledTrending } from '@/components/Content/TrendingItem.styled';
+import Details from '@/components/Content/Details';
 
 import { getImage } from '@/utils/data-utils';
 
@@ -26,6 +27,12 @@ const SeasonItem = ({ details, showId, priority, ...props }) => {
           </div>
         </a>
       </Link>
+      <Details
+        className="trending-details"
+        title={`Season ${details.season_number}`}
+        date={details.air_date}
+        hasNoPlatform
+      />
     </StyledTrending>
   );
 };
