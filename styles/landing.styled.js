@@ -12,6 +12,12 @@ export const StyledLanding = styled.section`
   margin: auto;
   ${gridMixin('1fr', 'auto')}
   gap: 3rem;
+
+  @media ${devices.laptop} {
+    &.landing {
+      width: 75%;
+    }
+  }
 `;
 
 export const StyledTrending = styled(ArticleCont)`
