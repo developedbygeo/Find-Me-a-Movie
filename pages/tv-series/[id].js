@@ -35,8 +35,6 @@ const SeriesDetails = ({ id, platform }) => {
   if (video) videoId = getVideoId(video.results);
   if (recommended) recommendedContent = recommended.results.slice(0, 10);
 
-  console.log(data);
-
   return (
     // <ErrorLoad error={error} data={data}>
     <ErrorLoad error={undefined} data={1} className="tv-details">
