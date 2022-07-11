@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { flexMixin } from '@/shared/mixins';
 import { headingM } from '@/shared/typography';
@@ -9,6 +9,17 @@ export const StyledDetails = styled.div`
   height: 30%;
   padding: 5% 6%;
   ${flexMixin('space-around', 'flex-start', 'column')};
+
+  ${({ hasNoPlatform }) =>
+    hasNoPlatform &&
+    css`
+      ${flexMixin('space-evenly', 'center', 'row-reverse')};
+      .details,
+      .title {
+        height: auto;
+        width: auto;
+      }
+    `};
 
   & > .details {
     ${flexMixin('flex-start', 'center', 'row')};
