@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { resetDefaults } from '@/shared/mixins';
 import { highlightFocus, interactiveButton } from '@/shared/interactions';
-import { lightNeumorph, tagNeumorph } from '@/shared/neumorphic';
+import { lightNeumorph, tagNeumorph, buttonNeumorph } from '@/shared/neumorphic';
 import { flexMixin } from '@/shared/mixins';
 
 export const UnstyledButton = styled.button`
@@ -43,4 +43,9 @@ export const ReviewButton = styled(StyledBackButton)`
   &:focus {
     border-radius: 1.5rem;
   }
+`;
+
+export const buttonLookalike = css`
+  padding: 1.75rem 2.5rem;
+  ${buttonNeumorph};
 `;
