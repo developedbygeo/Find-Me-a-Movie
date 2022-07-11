@@ -8,7 +8,7 @@ import { StyledLanding } from '@/styles/landing.styled';
 
 const Home = ({ trending, restTrending }) => {
   return (
-    <StyledLanding>
+    <StyledLanding className="landing">
       <Trending trendingData={trending} />
       <List content={restTrending} title={'Recommended Content'} className="landing-recommended" />
     </StyledLanding>
