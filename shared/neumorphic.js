@@ -13,3 +13,18 @@ export const tagNeumorph = css`
   background: #10141e;
   box-shadow: 2.2rem -2.2rem 5rem #0c0f16, -2.2rem 2.2rem 5rem #141926;
 `;
+
+export const buttonNeumorph = css`
+  border-radius: 1rem;
+  background: #10141e;
+  box-shadow: 2.2rem -2.2rem 5rem #0c0f17, -2.2rem 2.2rem 5rem #141925;
+
+  @media (hover: hover) {
+    transition: all 450ms ease-in-out;
+    &:hover {
+      box-shadow: -2.2rem 2.2em 6rem #0c0f17, 2.2rem -2.2rem 6rem #141925;
+      padding-inline: 5rem;
+      letter-spacing: 0.3rem;
+    }
+  }
+`;
