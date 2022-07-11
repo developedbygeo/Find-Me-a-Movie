@@ -19,6 +19,10 @@ export const StyledControls = styled.div`
   button {
     padding: 0.5rem;
   }
+
+  &.no-dots {
+    justify-content: space-evenly;
+  }
 `;
 
 export const StyledDots = styled.div`
