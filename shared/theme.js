@@ -31,6 +31,9 @@ const appTheme = {
       bodyS: '1.6rem',
     },
   },
+  icons: {
+    svg: '4.5rem',
+  },
 };
 
 export default appTheme;
