@@ -12,14 +12,10 @@ export const StyledNav = styled.nav`
     position: relative;
     color: rgb(${({ theme }) => theme.colors.secondary});
     white-space: nowrap;
-    font-size: 2rem;
     transition: all 100ms ease;
 
     svg {
-      width: 100%;
-      height: 100%;
-      min-width: 5rem;
-      min-height: 5rem;
+      font-size: ${({ theme }) => theme.icons.svg};
     }
 
     &::after {
