@@ -29,7 +29,7 @@ html{
       font-size: 40%;
     }
     @media ${devices.tablet}{
-      font-size: 52%;
+      font-size: 47.5%;
     }
     @media ${devices.tabletL}{
       font-size: 62.5%;
@@ -38,7 +38,7 @@ html{
       font-size: 46.5%;
     }
     @media ${devices.laptopM}{
-      font-size: 55.5%;
+      font-size: 50%;
     }
     @media ${devices.laptopL}{
       font-size: 60.5%;
