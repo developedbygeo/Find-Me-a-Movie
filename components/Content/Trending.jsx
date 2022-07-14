@@ -17,8 +17,8 @@ const mobileSlider = {
 const desktopSlider = {
   ...mobileSlider,
   slides: {
-    perView: 5,
-    spacing: 20,
+    perView: 6,
+    spacing: 30,
   },
 };
 
