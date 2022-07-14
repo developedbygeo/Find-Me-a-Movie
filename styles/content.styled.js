@@ -78,9 +78,10 @@ export const StyledPage = styled(StyledLanding)`
       }
 
       .detail-links {
-        width: 85%;
-        margin: initial;
+        width: auto;
         height: auto;
+        margin: initial;
+        padding-inline: 2rem;
         justify-self: flex-start;
         gap: 3rem;
 
