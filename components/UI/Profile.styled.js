@@ -13,7 +13,6 @@ export const ImageWrapper = styled.div`
   svg {
     transition: all 150ms ease-in;
     color: rgb(${({ theme }) => theme.colors.secondary});
-    height: 100%;
-    width: 100%;
+    font-size: ${({ theme }) => theme.icons.svg};
   }
 `;
