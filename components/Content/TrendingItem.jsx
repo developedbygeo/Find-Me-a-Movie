@@ -18,6 +18,7 @@ const TrendingItem = ({ movie, priority, platformAssist, ext, ...props }) => {
   } = movie;
 
   const date = getAmbiguousProperty(first_air_date, release_date);
+  const year = date ? date.split('-')[0] : '';
   const title = getAmbiguousProperty(name, original_name, original_title);
 
   const parsedData = getParsedMovie(poster_path, genre_ids[0], media_type, date, title);
@@ -50,7 +51,7 @@ const TrendingItem = ({ movie, priority, platformAssist, ext, ...props }) => {
         <Details
           className="trending-details"
           title={title}
-          date={date}
+          date={year || date || ''}
           platform={parsedData.platform ? parsedData.platform : platformAssist}
         />
       </TrendingDetails>
