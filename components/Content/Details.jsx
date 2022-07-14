@@ -10,7 +10,7 @@ const Details = ({ title, date, platform, ...props }) => {
       <div className="details">
         <p>
           <span className="date">{date || 'No date'} </span>
-          {platform && <span>&bull; </span>}
+          {platform && <span className="dot">&bull; </span>}
           {platform && (
             <span className={`icon ${platform === 'tv' ? 'tv' : 'movie'}`}>
               {icon} {platform}
