@@ -59,6 +59,7 @@ export const StyledRecommended = styled(ArticleCont)`
         margin: initial;
         width: 85%;
         grid-template-columns: repeat(5, 1fr);
+        gap: 5rem;
         min-height: auto;
       }
     }
