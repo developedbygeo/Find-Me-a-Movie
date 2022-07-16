@@ -2,6 +2,7 @@ import data from '@/mock/movie-details.json';
 import video from '@/mock/video-movie.json';
 import reviews from '@/mock/reviews-movie.json';
 import recommended from '@/mock/recommended-movie.json';
+import credits from '@/mock/credits-movie.json';
 
 import useSWR from 'swr';
 import { fetcher } from '@/utils/api-utils';
@@ -28,6 +29,8 @@ const MovieDetails = ({ platform, id }) => {
   let recommendedContent;
   const title = getDetailTitle(data, 'title', 'original_title');
 
+  console.log(credits);
+
   if (video) videoId = getVideoId(video.results);
   if (recommended) recommendedContent = recommended.results.slice(0, 10);
 
@@ -35,6 +38,7 @@ const MovieDetails = ({ platform, id }) => {
     <ErrorLoad error={undefined} data={1} className="movie-details">
       {/* <ErrorLoad error={error} data={data}> */}
       <FeaturedImage
+        placeholder="blur"
         backdropURL={data.backdrop_path}
         poster={data.poster_path}
         title={title}
