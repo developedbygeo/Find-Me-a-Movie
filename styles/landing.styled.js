@@ -64,7 +64,7 @@ export const StyledRecommended = styled(ArticleCont)`
       }
 
       li {
-        width: 85%;
+        width: 90%;
         margin: auto;
       }
     }
