@@ -6,7 +6,12 @@ import { MdClose } from 'react-icons/md';
 const ComingSoon = ({ onDisable }) => {
   return (
     <StyledSoon>
-      <UnstyledButton onClick={onDisable} title="Close this dialogue" aria-label="Close this dialogue">
+      <UnstyledButton
+        onClick={onDisable}
+        title="Close this dialogue"
+        aria-label="Close this dialogue"
+        tabIndex={0}
+      >
         <MdClose />
       </UnstyledButton>
       <div>
