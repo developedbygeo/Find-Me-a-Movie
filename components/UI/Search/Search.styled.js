@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import devices from '@/shared/breakpoints';
 import { flexMixin, InputStyle } from '@/shared/mixins';
@@ -56,5 +56,21 @@ export const StyledWrapper = styled.div`
   @media ${devices.laptop} {
     padding-block: 2%;
     width: 45%;
+
+    input::placeholder {
+      text-align: center;
+    }
+
+    ${({ IsWide }) =>
+      !IsWide
+        ? css`
+            width: 25%;
+            & > form {
+              width: 80%;
+            }
+          `
+        : css`
+            width: 35%;
+          `};
   }
 `;
