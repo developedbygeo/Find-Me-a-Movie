@@ -55,12 +55,17 @@ export const StyledRecommended = styled(ArticleCont)`
     width: 100%;
 
     &.landing-recommended {
-      & > ul {
+      ul {
         margin: initial;
         width: 85%;
         grid-template-columns: repeat(5, 1fr);
         gap: 5rem;
         min-height: auto;
+      }
+
+      li {
+        width: 85%;
+        margin: auto;
       }
     }
   }
