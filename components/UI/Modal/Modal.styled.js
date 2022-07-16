@@ -24,6 +24,10 @@ const modalStyle = css`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   border-radius: 1rem;
   background: rgb(${({ theme }) => theme.colors.background});
+
+  @media ${devices.laptop} {
+    width: 40%;
+  }
 `;
 
 const getDivStyle = ({ backdrop }) => {
