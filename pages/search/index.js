@@ -16,8 +16,8 @@ const Search = ({ search, platform }) => {
 
   return (
     // <ErrorLoad error={error} data={data}>
-    <ErrorLoad error={undefined} data={data} className="search">
-      <List content={data.results} title="Search Results" ext={extension} />
+    <ErrorLoad error={undefined} data={data} className="search-og">
+      <List content={data.results} title="Search Results" ext={extension} className="search-list-cont" />
     </ErrorLoad>
   );
 };
@@ -34,5 +34,7 @@ export const getServerSideProps = async (ctx) => {
     },
   };
 };
+
+Search.searchGeneric = true;
 
 export default Search;
