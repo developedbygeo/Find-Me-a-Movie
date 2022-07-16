@@ -17,7 +17,7 @@ const platformLookup = {
   searchTv: selectOptions[1],
 };
 
-const Search = ({ showCategories, defaultPlatformQuery, defaultPlaceholder }) => {
+const Search = ({ showCategories, defaultPlatformQuery, defaultPlaceholder, ...props }) => {
   const router = useRouter();
   const { route } = router;
   const defaultValue = platformLookup[defaultPlatformQuery];
@@ -42,7 +42,7 @@ const Search = ({ showCategories, defaultPlatformQuery, defaultPlaceholder }) =>
   const searchTermHandler = (e) => setSearchTerm(e.target.value);
 
   return (
-    <StyledWrapper>
+    <StyledWrapper {...props}>
       <form onSubmit={formSubmitHandler}>
         <UnstyledButton type="submit" title="Search now" aria-label="Search now">
           <BiSearchAlt />
