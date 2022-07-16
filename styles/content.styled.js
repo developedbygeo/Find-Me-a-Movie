@@ -27,7 +27,10 @@ export const StyledPage = styled(StyledLanding)`
 
   @media ${devices.laptop} {
     &.tv-details,
-    &.movie-details {
+    &.movie-details,
+    &.movies-og,
+    &.tv-og,
+    &.search-og {
       grid-template-columns: 0.5fr 1fr;
       margin: initial;
       width: 75%;
@@ -132,10 +135,31 @@ export const StyledPage = styled(StyledLanding)`
         }
       }
     }
+
+    &.movies-og,
+    &.tv-og,
+    &.search-og {
+      grid-template-columns: 1fr;
+      height: auto;
+      grid-template-rows: 1fr;
+    }
+
+    &.search-og {
+      padding: 0 0 2.5% 0;
+    }
+
     &.coming-soon {
       width: 75%;
       ${flexMixin('center', 'center', 'column')};
       gap: 15rem;
+    }
+
+    .tv-list-cont,
+    .movies-list-cont,
+    .search-list-cont {
+      ul {
+        grid-template-columns: repeat(5, 1fr);
+      }
     }
   }
 `;
