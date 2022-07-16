@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
     <Layout>
       {Component.backButton && <BackButton />}
       {Component.searchGeneric && (
-        <Search showCategories defaultPlaceholder="Search for movies or TV shows" />
+        <Search showCategories defaultPlaceholder="Search for movies or TV shows" IsWide />
       )}
       {Component.simpleSearch && <Search defaultPlatformQuery={Component.defaultPlatformQuery} />}
       <Component {...pageProps} />
