@@ -3,6 +3,7 @@ import externals from '@/mock/externals-tv-series.json';
 import reviews from '@/mock/reviews-tv-series.json';
 import video from '@/mock/video-tv-series.json';
 import recommended from '@/mock/recommended-tv-shows.json';
+import credits from '@/mock/credits-tv.json';
 
 import useSWR from 'swr';
 
@@ -39,6 +40,7 @@ const SeriesDetails = ({ id, platform }) => {
     // <ErrorLoad error={error} data={data}>
     <ErrorLoad error={undefined} data={1} className="tv-details">
       <FeaturedImage
+        placeholder="blur"
         backdropURL={data.backdrop_path}
         poster={data.poster_path}
         title={title}
