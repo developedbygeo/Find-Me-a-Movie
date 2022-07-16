@@ -6,8 +6,8 @@ import List from '@/components/Content/List';
 
 const TvSeries = ({ shows }) => {
   return (
-    <StyledPage>
-      <List content={shows} title="TV Series" ext="/tv-series" />
+    <StyledPage className="tv-og">
+      <List content={shows} title="TV Series" ext="/tv-series" className="tv-list-cont" />
     </StyledPage>
   );
 };
