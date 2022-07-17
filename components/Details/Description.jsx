@@ -1,4 +1,6 @@
 import { useMemo } from 'react';
+
+import Cast from '@/components/Content/Cast';
 import {
   SimpleDescription,
   StyledDescription,
@@ -18,6 +20,7 @@ const Description = ({
   genres,
   isSeasonDetails,
   runtime,
+  cast,
   ...props
 }) => {
   const ratingClassName = useMemo(() => getDetailClassname(+rating), [rating]);
@@ -59,6 +62,7 @@ const Description = ({
       <StyledText>
         <p>{overview}</p>
       </StyledText>
+      {cast && <Cast cast={cast} titleAs="h3" />}
     </StyledDescription>
   );
 };
