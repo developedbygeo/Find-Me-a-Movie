@@ -31,7 +31,7 @@ export const StyledPage = styled(StyledLanding)`
     &.movies-og,
     &.tv-og,
     &.search-og {
-      grid-template-columns: 0.5fr 1fr;
+      grid-template-columns: 0.3fr 1fr;
       margin: initial;
       width: 75%;
       margin-inline: 17%;
@@ -39,7 +39,7 @@ export const StyledPage = styled(StyledLanding)`
 
       .detail-image {
         grid-area: 1/1/1/2;
-        width: 85%;
+        width: 70%;
         min-height: 45vh;
         min-width: 15vw;
         align-self: flex-start;
@@ -72,10 +72,10 @@ export const StyledPage = styled(StyledLanding)`
         width: max-content;
         margin: 0;
         gap: 2.5rem;
-        min-height: 30vh;
+        min-height: 25vh;
         ul {
           flex-direction: column;
-          gap: 2.5rem;
+          gap: 3rem;
           width: auto;
         }
       }
@@ -110,6 +110,8 @@ export const StyledPage = styled(StyledLanding)`
         max-width: 50vw;
         border-radius: 3rem;
         align-self: center;
+        justify-self: flex-end;
+        margin-inline: initial;
       }
 
       .detail-seasons,
@@ -128,10 +130,16 @@ export const StyledPage = styled(StyledLanding)`
       }
       .recommended {
         grid-area: 5/1/5/3;
+        min-height: 50vh;
         ul {
           grid-template-columns: repeat(5, 1fr);
           height: auto;
-          min-height: initial;
+          min-height: 70vh;
+        }
+        li {
+          height: 100%;
+          width: 85%;
+          margin: auto;
         }
       }
     }
