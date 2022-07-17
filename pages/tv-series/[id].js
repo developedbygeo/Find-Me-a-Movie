@@ -53,6 +53,7 @@ const SeriesDetails = ({ id, platform }) => {
         rating={data.vote_average}
         votes={data.vote_count}
         genres={data.genres}
+        cast={credits.cast}
         className="detail-description"
       />
       <YoutubeVideo videoId={videoId} title={title} className="detail-video" />
