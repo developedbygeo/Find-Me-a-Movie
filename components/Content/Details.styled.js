@@ -25,7 +25,6 @@ export const StyledDetails = styled.div`
     ${flexMixin('flex-start', 'center', 'row')};
 
     p {
-      font-size: 2rem;
       ${flexMixin('flex-start', 'center', 'row')}
       gap: 1rem;
     }
@@ -52,6 +51,7 @@ export const StyledDetails = styled.div`
 
   .title h2 {
     ${headingM};
+    font-size: 1.9rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
