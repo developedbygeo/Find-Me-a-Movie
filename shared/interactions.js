@@ -46,3 +46,13 @@ export const interactiveButton = css`
     }
   }
 `;
+
+export const interactShowReviews = css`
+  transition: all 150ms ease-in;
+
+  @media (hover: hover) {
+    &:hover {
+      background: rgb(${({ theme }) => theme.colors.secondary});
+    }
+  }
+`;
