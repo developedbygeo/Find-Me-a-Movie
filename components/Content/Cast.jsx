@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect } from 'react';
 
 import useWindow from '@/hooks/useWindow';
 import useSlider from '@/hooks/useSlider';
@@ -12,18 +13,17 @@ import { StyledCastList, CastImageCont } from './Cast.styled';
 
 const mobileSlider = {
   loop: true,
-  mode: 'free-snap',
+  mode: 'snap',
   slides: {
     perView: 4,
-    spacing: 10,
+    spacing: 2,
   },
 };
 
 const desktopSlider = {
   ...mobileSlider,
   slides: {
-    perView: 7,
-    spacing: 15,
+    perView: 11,
   },
 };
 
@@ -36,9 +36,9 @@ const Cast = ({ cast, titleAs }) => {
   const isSliderReady = load && slider.current;
 
   return (
-    <StyledRecommended>
+    <StyledRecommended className="cast-list-cont">
       <StyledTitle as={titleAs || 'h1'}>Cast</StyledTitle>
-      <StyledCastList as="div">
+      <StyledCastList as="div" className="cast-list">
         <ul
           className="keen-slider"
           ref={ref}
