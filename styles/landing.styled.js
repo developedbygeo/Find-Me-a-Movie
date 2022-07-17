@@ -47,6 +47,11 @@ export const StyledRecommended = styled(ArticleCont)`
   ${flexMixin('space-between', 'flex-start', 'column')};
   gap: 2rem;
 
+  &.cast-list-cont {
+    margin-block: 0;
+    gap: 0.5rem;
+  }
+
   h1 {
     padding-block: 2.5%;
   }
@@ -60,10 +65,11 @@ export const StyledRecommended = styled(ArticleCont)`
         width: 85%;
         grid-template-columns: repeat(5, 1fr);
         gap: 5rem;
-        min-height: auto;
+        min-height: 70vh;
       }
 
       li {
+        height: 100%;
         width: 90%;
         margin: auto;
       }
