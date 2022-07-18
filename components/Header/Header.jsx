@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { useReducer } from 'react';
 
+import useWindow from '@/hooks/useWindow';
+
 import Modal from '@/UI/Modal/Modal';
 import ComingSoon from '../UI/Modal/ComingSoon';
 import Nav from './Nav';
@@ -10,11 +12,13 @@ import Profile from '@/UI/Profile';
 
 const Header = () => {
   const [showProfile, setShowProfile] = useReducer((state) => !state, false);
+  const window = useWindow();
+  const gradient = window > 1150 ? '22deg' : '262deg';
 
   const toggleProfileHandler = () => setShowProfile();
 
   return (
-    <StyledHeader>
+    <StyledHeader gradientAngle={gradient}>
       <LogoContainer>
         <Image
           src={'/assets/logo.svg'}
