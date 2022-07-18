@@ -67,3 +67,13 @@ export const InputStyle = css`
   color: rgba(${({ theme }) => theme.colors.white}, 0.8);
   ${highlightFocus};
 `;
+
+export const customGradient = css`
+  background: rgb(16, 20, 30);
+  background: linear-gradient(
+    ${(props) => props.gradientAngle || '262deg'},
+    rgba(16, 20, 30, 1) 0%,
+    rgba(18, 24, 38, 1) 62%,
+    rgba(19, 31, 60, 1) 100%
+  );
+`;
