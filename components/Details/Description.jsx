@@ -46,11 +46,13 @@ const Description = ({
             <span>{runtime}</span> minutes
           </p>
         )}
-        <StyledRating title={`Out of ${votes} votes`}>
-          <p>
-            <span className={ratingClassName}>{rating}</span> / 10
-          </p>
-        </StyledRating>
+        {rating && (
+          <StyledRating title={`Out of ${votes} votes`}>
+            <p>
+              <span className={ratingClassName}>{rating}</span> / 10
+            </p>
+          </StyledRating>
+        )}
       </StyledTitleCont>
       {genres && (
         <ul>
