@@ -1,6 +1,6 @@
 import useWindow from '@/hooks/useWindow';
 
-import { LinkWrapper, StyledLinks } from './Shows/ExternalLinks.styled';
+import { LinkWrapper, StyledLinks } from './ExternalLinks.styled';
 
 import { SiFacebook, SiTwitter, SiInstagram, SiImdb } from 'react-icons/si';
 
