@@ -5,6 +5,7 @@ const appTheme = {
     secondary: '90, 105, 143' || '#5a698f',
     textHighlight: '206, 221, 242' || '#ceddf2',
     linkHighlight: '167, 176, 200' || '#a7b4c0',
+    secondaryHighlight: '76, 110, 194' || '#4c6eb2',
     background: '16, 20, 30' || '#10141E',
     white: '255, 255, 255' || '#ffffff',
     black: '0, 0, 0' || '#000000',
