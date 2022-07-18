@@ -25,12 +25,19 @@ export const StyledPage = styled(StyledLanding)`
     grid-template-rows: auto;
   }
 
+  &.movies-og,
+  &.tv-og,
+  &.search-og {
+    grid-template-rows: auto;
+  }
+
   @media ${devices.laptop} {
     &.tv-details,
     &.movie-details,
     &.movies-og,
     &.tv-og,
-    &.search-og {
+    &.search-og,
+    &.person-details {
       grid-template-columns: 0.3fr 1fr;
       margin: initial;
       width: 75%;
@@ -165,8 +172,13 @@ export const StyledPage = styled(StyledLanding)`
     .tv-list-cont,
     .movies-list-cont,
     .search-list-cont {
+      margin-block: 0;
       ul {
         grid-template-columns: repeat(5, 1fr);
+      }
+      li {
+        width: 95%;
+        margin: auto;
       }
     }
   }
