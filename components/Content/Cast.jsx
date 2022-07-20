@@ -1,41 +1,44 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
-import useWindow from '@/hooks/useWindow';
 import useSlider from '@/hooks/useSlider';
 import { getImage } from '@/utils/data-utils';
 import { getDetailTitle } from '@/utils/data-utils';
 
-import { StyledRecommended } from '@/styles/landing.styled';
 import { StyledTitle } from './List.styled';
-import { StyledCastList, CastImageCont } from './Cast.styled';
-
-const mobileSlider = {
-  loop: true,
-  mode: 'snap',
-  slides: {
-    perView: 4,
-  },
-};
-
-const desktopSlider = {
-  ...mobileSlider,
-  slides: {
-    perView: 11,
-  },
-};
-
-// TODO add controls
-// TODO add breakpoints in slider options instead of using the window width
+import { CastWrapper, StyledCastList, CastImageCont, StyledAnchor } from './Cast.styled';
 
 const Cast = ({ cast, titleAs }) => {
-  const window = useWindow();
-  const settings = window > 1150 ? desktopSlider : mobileSlider;
-  const { ref, slider, currentSlide, load } = useSlider(settings);
+  const [options, setOptions] = useState({});
+  const [currentCast, setCurrentCast] = useState([]);
+  const { ref, slider, currentSlide, load } = useSlider(options);
   const isSliderReady = load && slider.current;
 
+  useEffect(() => {
+    if (cast) {
+      setCurrentCast(cast);
+      setOptions({
+        loop: true,
+        slides: {
+          perView: Math.min(cast.length / 3, 6),
+        },
+        breakpoints: {
+          '(min-width: 1150px)': {
+            slides: {
+              perView: 10,
+            },
+          },
+        },
+        slideChanged(s) {
+          setCurrentSlide(s.details().relativeSlide);
+        },
+      });
+    }
+  }, [cast, slider]);
+
   return (
-    <StyledRecommended className="cast-list-cont">
+    <CastWrapper className="cast-list-cont">
       <StyledTitle as={titleAs || 'h1'}>Cast</StyledTitle>
       <StyledCastList as="div" className="cast-list">
         <ul
@@ -45,41 +48,42 @@ const Cast = ({ cast, titleAs }) => {
           alt={`View all ${cast.length} cast members`}
           aria-label={`View all ${cast.length} cast members`}
         >
-          {cast.map((person, idx) => {
-            let imagePath;
-            const name = getDetailTitle(person, 'name', 'original_name');
+          {currentCast &&
+            currentCast.map((person, idx) => {
+              let imagePath;
+              const name = getDetailTitle(person, 'name', 'original_name');
 
-            if (person.profile_path) {
-              imagePath = getImage(person.profile_path, 'w185');
-            }
-            return (
-              <li
-                key={person.id || `cast-${idx}`}
-                title={`View more details about ${name}`}
-                className="keen-slider__slide"
-                role="group"
-                tabIndex={0}
-              >
-                <Link href={`/people/${person.id}`} passHref>
-                  <a>
-                    <CastImageCont>
-                      <Image
-                        priority={idx < settings.slides.perView}
-                        src={imagePath || '/content/avatar-placeholder.png'}
-                        alt={name}
-                        placeholder="blur"
-                        blurDataURL={imagePath || '/content/avatar-placeholder.png'}
-                        layout="fill"
-                      />
-                    </CastImageCont>
-                  </a>
-                </Link>
-              </li>
-            );
-          })}
+              if (person.profile_path) {
+                imagePath = getImage(person.profile_path, 'w500');
+              }
+              return (
+                <li
+                  key={person.id || `cast-${idx}`}
+                  title={`View more details about ${name}`}
+                  className="keen-slider__slide"
+                  role="group"
+                  tabIndex={0}
+                >
+                  <Link href={`/people/${person.id}`} passHref>
+                    <StyledAnchor>
+                      <CastImageCont>
+                        <Image
+                          priority={idx < slider.current.slides.perView}
+                          src={imagePath || '/content/avatar-placeholder.png'}
+                          alt={name}
+                          placeholder="blur"
+                          blurDataURL={imagePath || '/content/avatar-placeholder.png'}
+                          layout="fill"
+                        />
+                      </CastImageCont>
+                    </StyledAnchor>
+                  </Link>
+                </li>
+              );
+            })}
         </ul>
       </StyledCastList>
-    </StyledRecommended>
+    </CastWrapper>
   );
 };
 
