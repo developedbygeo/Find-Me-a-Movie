@@ -29,8 +29,6 @@ const MovieDetails = ({ platform, id }) => {
   let recommendedContent;
   const title = getDetailTitle(data, 'title', 'original_title');
 
-  console.log(credits);
-
   if (video) videoId = getVideoId(video.results);
   if (recommended) recommendedContent = recommended.results.slice(0, 10);
 
@@ -52,6 +50,7 @@ const MovieDetails = ({ platform, id }) => {
         rating={data.vote_average}
         votes={data.vote_count}
         genres={data.genres}
+        cast={credits.cast}
         className="detail-description"
       />
       <MovieExtraInfo budget={data.budget} revenue={data.revenue} className="detail-movie-extra" />
