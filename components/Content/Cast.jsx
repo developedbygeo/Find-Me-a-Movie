@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from 'react';
 
 import useWindow from '@/hooks/useWindow';
 import useSlider from '@/hooks/useSlider';
@@ -16,7 +15,6 @@ const mobileSlider = {
   mode: 'snap',
   slides: {
     perView: 4,
-    spacing: 2,
   },
 };
 
@@ -28,6 +26,7 @@ const desktopSlider = {
 };
 
 // TODO add controls
+// TODO add breakpoints in slider options instead of using the window width
 
 const Cast = ({ cast, titleAs }) => {
   const window = useWindow();
@@ -66,10 +65,10 @@ const Cast = ({ cast, titleAs }) => {
                     <CastImageCont>
                       <Image
                         priority={idx < settings.slides.perView}
-                        src={imagePath}
+                        src={imagePath || '/content/avatar-placeholder.png'}
                         alt={name}
                         placeholder="blur"
-                        blurDataURL={imagePath}
+                        blurDataURL={imagePath || '/content/avatar-placeholder.png'}
                         layout="fill"
                       />
                     </CastImageCont>
