@@ -5,11 +5,11 @@ import { UnstyledButton } from '@/UI/Buttons.styled';
 
 import { GiCircle, GiPlainCircle } from 'react-icons/gi';
 
-const Controls = ({ slidesLength, slider, currentSlide, disableDots }) => {
+const Controls = ({ slidesLength, slider, currentSlide, disableDots, ...props }) => {
   const adjustedClass = disableDots ? 'no-dots' : '';
 
   return (
-    <StyledControls className={adjustedClass}>
+    <StyledControls className={adjustedClass} {...props}>
       <Arrow
         isLeft
         onClick={(e) => e.stopPropagation() || slider.current.prev()}
