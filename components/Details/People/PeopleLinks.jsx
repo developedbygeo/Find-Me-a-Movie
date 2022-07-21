@@ -2,9 +2,9 @@ import { StyledPeopleLinks } from './PeopleLinks.styled';
 import { SiImdb } from 'react-icons/si';
 import { BsGlobe } from 'react-icons/bs';
 
-const PeopleLinks = ({ homepage, imdbId }) => {
+const PeopleLinks = ({ homepage, imdbId, ...props }) => {
   return (
-    <StyledPeopleLinks>
+    <StyledPeopleLinks {...props}>
       <h3>External Links</h3>
       {!homepage && !imdbId && <p>No links found!</p>}
       <div>
