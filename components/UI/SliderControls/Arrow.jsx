@@ -2,8 +2,7 @@ import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
 
 import { UnstyledButton } from '../Buttons.styled';
 
-const Arrow = ({ disabled, onClick, isLeft, ...props }) => {
-  const isDisabled = disabled ? 'disabled' : '';
+const Arrow = ({ onClick, isLeft, ...props }) => {
   const Icon = isLeft ? IoMdArrowDropleft : IoMdArrowDropright;
 
   return (
