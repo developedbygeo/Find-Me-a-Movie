@@ -13,6 +13,8 @@ import { getImage } from '@/utils/data-utils';
 const PeopleDetails = ({ id }) => {
   const imagePath = data.profile_path && getImage(data.profile_path, 'w185');
 
+  console.log(data);
+
   return (
     //   <ErrorLoad error={error} data={data}>
     <ErrorLoad error={undefined} data={1} className="person-details">
@@ -29,10 +31,12 @@ const PeopleDetails = ({ id }) => {
         overview={data.biography || ''}
         className="person-description"
       />
-      <PeopleLinks homepage={data.homepage} imdbId={data.imdb_id} />
+      <PeopleLinks homepage={data.homepage} imdbId={data.imdb_id} className="people-links" />
     </ErrorLoad>
   );
 };
+
+PeopleDetails.backButton = true;
 
 export default PeopleDetails;
 
