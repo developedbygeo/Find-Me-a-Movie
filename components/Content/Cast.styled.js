@@ -7,16 +7,37 @@ import { gridMixin } from '@/shared/mixins';
 
 export const CastWrapper = styled(StyledRecommended)`
   ${gridMixin('1fr', 'auto')};
-  width: 95%;
+  width: 100%;
+  position: relative;
 `;
 
 export const StyledCastList = styled(GalleryWrapper)`
-  overflow: hidden;
-  width: 100%;
+  width: 95%;
   height: auto;
 
   li {
     box-shadow: none !important;
+  }
+
+  .cast-list-controls {
+    width: 105%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+    button {
+      pointer-events: auto;
+      background: rgba(${({ theme }) => theme.colors.secondary}, 0.025);
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    .arr-right {
+      border-radius: 0% 50% 50% 0%;
+    }
+    .arr-left {
+      border-radius: 50% 0% 0% 50%;
+    }
   }
 `;
 
