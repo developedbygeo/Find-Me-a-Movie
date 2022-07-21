@@ -15,3 +15,21 @@ export const loadingFolding = keyframes`
     opacity: 0;
 }
 `;
+
+export const showText = keyframes`
+0%{
+    width: 100%;
+}
+100%{
+    width: 0%;
+}
+`;
+
+export const hideText = keyframes`
+0%{
+    width: 0%;
+}
+100%{
+    width: 100%;
+}
+`;
