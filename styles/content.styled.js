@@ -151,6 +151,16 @@ export const StyledPage = styled(StyledLanding)`
       }
     }
 
+    &.person-details {
+      grid-template-columns: 0.2fr 1fr;
+      grid-template-rows: auto;
+      place-items: center;
+
+      .people-links {
+        align-self: flex-start;
+      }
+    }
+
     &.movies-og,
     &.tv-og,
     &.search-og {
