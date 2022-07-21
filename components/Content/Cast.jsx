@@ -6,6 +6,7 @@ import useSlider from '@/hooks/useSlider';
 import { getImage } from '@/utils/data-utils';
 import { getDetailTitle } from '@/utils/data-utils';
 
+import Controls from '@/components/UI/SliderControls/Controls';
 import { StyledTitle } from './List.styled';
 import { CastWrapper, StyledCastList, CastImageCont, StyledAnchor } from './Cast.styled';
 
@@ -82,6 +83,13 @@ const Cast = ({ cast, titleAs }) => {
               );
             })}
         </ul>
+        <Controls
+          slidesLength={currentCast.length}
+          slider={slider}
+          currentSlide={currentSlide}
+          disableDots={1}
+          className="cast-list-controls"
+        />
       </StyledCastList>
     </CastWrapper>
   );
