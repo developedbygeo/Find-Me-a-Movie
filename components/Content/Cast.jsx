@@ -3,8 +3,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 import useSlider from '@/hooks/useSlider';
-import { getImage } from '@/utils/data-utils';
-import { getDetailTitle } from '@/utils/data-utils';
+import { getImage, getDetailTitle } from '@/utils/data-utils';
 
 import Controls from '@/components/UI/SliderControls/Controls';
 import { StyledTitle } from './List.styled';
@@ -18,7 +17,7 @@ const Cast = ({ cast, titleAs }) => {
 
   useEffect(() => {
     if (cast) {
-      setCurrentCast(cast);
+      setCurrentCast(cast.slice(0, 10));
       setOptions({
         loop: true,
         slides: {
@@ -83,13 +82,15 @@ const Cast = ({ cast, titleAs }) => {
               );
             })}
         </ul>
-        <Controls
-          slidesLength={currentCast.length}
-          slider={slider}
-          currentSlide={currentSlide}
-          disableDots={1}
-          className="cast-list-controls"
-        />
+        {isSliderReady && (
+          <Controls
+            slidesLength={currentCast.length}
+            slider={slider}
+            currentSlide={currentSlide}
+            disableDots={1}
+            className="cast-list-controls"
+          />
+        )}
       </StyledCastList>
     </CastWrapper>
   );
