@@ -3,7 +3,6 @@ import useSlider from '@/hooks/useSlider';
 
 import { StyledTrending, GalleryWrapper } from '@/styles/landing.styled';
 import TrendingItem from './TrendingItem';
-import 'keen-slider/keen-slider.min.css';
 
 const mobileSlider = {
   loop: true,
