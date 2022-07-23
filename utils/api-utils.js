@@ -1,5 +1,3 @@
-// export const fetcher = (...args) => fetch(...args).then((res) => res.json());
-
 export const fetcher = async (url) => {
   const res = await fetch(url);
 
@@ -20,6 +18,13 @@ export const getTrending = async () => {
 export const getPopularMovies = async () => {
   const res = await fetch(
     `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
+  );
+  return res.json();
+};
+
+export const getUpcomingMovies = async () => {
+  const res = await fetch(
+    `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
   );
   return res.json();
 };
