@@ -169,6 +169,10 @@ export const StyledPage = styled(StyledLanding)`
       grid-template-rows: 1fr;
     }
 
+    &.movies-og {
+      padding: 2.5% 0 5% 0;
+    }
+
     &.search-og {
       padding: 0 0 2.5% 0;
     }
