@@ -13,6 +13,7 @@ export const CastWrapper = styled(StyledRecommended)`
 
 export const StyledCastList = styled(GalleryWrapper)`
   width: 95%;
+  width: auto;
   height: auto;
 
   li {
