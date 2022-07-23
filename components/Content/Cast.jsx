@@ -17,16 +17,18 @@ const Cast = ({ cast, titleAs }) => {
 
   useEffect(() => {
     if (cast) {
-      setCurrentCast(cast.slice(0, 10));
+      setCurrentCast(cast);
       setOptions({
         loop: true,
+        mode: 'free-snap',
+        centered: true,
         slides: {
-          perView: Math.min(cast.length / 3, 6),
+          perView: 4,
         },
         breakpoints: {
           '(min-width: 1150px)': {
             slides: {
-              perView: 10,
+              perView: 9,
             },
           },
         },
@@ -41,7 +43,7 @@ const Cast = ({ cast, titleAs }) => {
     <CastWrapper className="cast-list-cont">
       <StyledTitle as={titleAs || 'h1'}>Cast</StyledTitle>
       <StyledCastList as="div" className="cast-list">
-        <ul
+        <div
           className="keen-slider"
           ref={ref}
           role="region"
@@ -55,9 +57,11 @@ const Cast = ({ cast, titleAs }) => {
 
               if (person.profile_path) {
                 imagePath = getImage(person.profile_path, 'w500');
+              } else {
+                imagePath = '/content/avatar-placeholder.png';
               }
               return (
-                <li
+                <div
                   key={person.id || `cast-${idx}`}
                   title={`View more details about ${name}`}
                   className="keen-slider__slide"
@@ -69,7 +73,7 @@ const Cast = ({ cast, titleAs }) => {
                       <CastImageCont>
                         <Image
                           priority={idx < slider.current.slides.perView}
-                          src={imagePath || '/content/avatar-placeholder.png'}
+                          src={imagePath}
                           alt={name}
                           placeholder="blur"
                           blurDataURL={imagePath || '/content/avatar-placeholder.png'}
@@ -78,10 +82,10 @@ const Cast = ({ cast, titleAs }) => {
                       </CastImageCont>
                     </StyledAnchor>
                   </Link>
-                </li>
+                </div>
               );
             })}
-        </ul>
+        </div>
         {isSliderReady && (
           <Controls
             slidesLength={currentCast.length}
