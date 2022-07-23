@@ -1,4 +1,4 @@
-import { StyledPeopleLinks } from './PeopleLinks.styled';
+import { StyledPeopleLinks, HomepageLink, ImdbLink } from './PeopleLinks.styled';
 import { SiImdb } from 'react-icons/si';
 import { BsGlobe } from 'react-icons/bs';
 
@@ -9,7 +9,7 @@ const PeopleLinks = ({ homepage, imdbId, ...props }) => {
       {!homepage && !imdbId && <p>No links found!</p>}
       <div>
         {homepage && (
-          <a
+          <HomepageLink
             href={homepage}
             target="_blank"
             rel="noopener noreferrer"
@@ -17,10 +17,10 @@ const PeopleLinks = ({ homepage, imdbId, ...props }) => {
             aria-label="Link to artist's website"
           >
             <BsGlobe />
-          </a>
+          </HomepageLink>
         )}
         {imdbId && (
-          <a
+          <ImdbLink
             href={`https://www.imdb.com/name/${imdbId}/`}
             target="_blank"
             rel="noopener noreferrer"
@@ -28,7 +28,7 @@ const PeopleLinks = ({ homepage, imdbId, ...props }) => {
             aria-label="Link to IMDB"
           >
             <SiImdb />
-          </a>
+          </ImdbLink>
         )}
       </div>
     </StyledPeopleLinks>
