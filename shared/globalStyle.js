@@ -1,8 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
+import 'keen-slider/keen-slider.min.css';
+
+import devices from './breakpoints';
 import { maxContainer, customScrollbar } from './mixins';
 import { headingL, headingM, headingS, body } from './typography';
-import devices from './breakpoints';
 
 const GlobalStyle = createGlobalStyle`
 *{
