@@ -13,8 +13,6 @@ import { getImage } from '@/utils/data-utils';
 const PeopleDetails = ({ id }) => {
   const imagePath = data.profile_path && getImage(data.profile_path, 'w185');
 
-  console.log(data);
-
   return (
     //   <ErrorLoad error={error} data={data}>
     <ErrorLoad error={undefined} data={1} className="person-details">
