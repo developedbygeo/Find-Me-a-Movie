@@ -2,8 +2,6 @@ import SeasonItem from './SeasonItem';
 import useSlider from '@/hooks/useSlider';
 import useWindow from '@/hooks/useWindow';
 
-import 'keen-slider/keen-slider.min.css';
-
 import Controls from '@/components/UI/SliderControls/Controls';
 import { GalleryWrapper } from '@/styles/landing.styled';
 import { ListWrapper } from './SeasonList.styled';
