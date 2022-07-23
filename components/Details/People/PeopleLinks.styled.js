@@ -18,3 +18,23 @@ export const StyledPeopleLinks = styled(LinkWrapper)`
     ${flexMixin('space-evenly', 'center', 'row')};
   }
 `;
+
+export const HomepageLink = styled.a`
+  transition: all 0.2s ease-in-out;
+
+  @media (hover: hover) {
+    &:hover {
+      color: rgb(${({ theme }) => theme.colors.secondary});
+    }
+  }
+`;
+
+export const ImdbLink = styled.a`
+  transition: all 0.2s ease-in-out;
+
+  @media (hover: hover) {
+    &:hover {
+      color: #ffc107;
+    }
+  }
+`;
