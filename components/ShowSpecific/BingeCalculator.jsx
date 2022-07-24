@@ -5,11 +5,11 @@ import { FcIdea } from 'react-icons/fc';
 import { BsClockHistory, BsCalendar2Day } from 'react-icons/bs';
 import { CgSandClock } from 'react-icons/cg';
 
-const BingeCalculator = ({ episodes }) => {
+const BingeCalculator = ({ episodes, ...props }) => {
   const [minutes, hours, days] = getBingeDuration(episodes, 'runtime');
 
   return (
-    <StyledBinge>
+    <StyledBinge {...props}>
       <HeaderCont>
         <FcIdea />
         <h2>Feeling adventurous?</h2>
