@@ -54,6 +54,10 @@ export const StyledPage = styled(StyledLanding)`
         align-self: flex-start;
       }
 
+      &.season-details {
+        row-gap: 6.5rem;
+      }
+
       .season-details-img-cont {
         margin-top: 10vh;
         min-height: 35vh;
@@ -64,6 +68,10 @@ export const StyledPage = styled(StyledLanding)`
         width: initial;
         margin: initial;
         align-self: flex-start;
+      }
+
+      .season-details-stats {
+        height: 100%;
       }
 
       .detail-description,
