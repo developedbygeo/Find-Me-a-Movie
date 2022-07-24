@@ -24,7 +24,7 @@ const SeasonDetails = ({ details }) => {
         isSeasonDetails
         className="season-details-desc"
       />
-      <Stats episodes={details.episodes} />
+      <Stats episodes={details.episodes} className="season-details-stats" />
       <BingeCalculator episodes={details.episodes} className="season-details-binge" />
     </StyledSeasonDetails>
   );
