@@ -5,6 +5,8 @@ import { descriptionStyle } from '@/shared/typography';
 import { interactLink } from '@/shared/interactions';
 
 export const StyledFooter = styled.footer`
+  position: static;
+  bottom: 0;
   ${flexMixin('center', 'center', 'row')};
   gap: 1rem;
   height: 6vh;
