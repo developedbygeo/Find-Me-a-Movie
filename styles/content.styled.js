@@ -33,6 +33,7 @@ export const StyledPage = styled(StyledLanding)`
 
   @media ${devices.laptop} {
     &.tv-details,
+    &.season-details,
     &.movie-details,
     &.movies-og,
     &.tv-og,
@@ -44,7 +45,8 @@ export const StyledPage = styled(StyledLanding)`
       margin-inline: 17%;
       padding: 2.5% 0 2.5% 0;
 
-      .detail-image {
+      .detail-image,
+      .season-details-img-cont {
         grid-area: 1/1/1/2;
         width: 70%;
         min-height: 45vh;
@@ -52,13 +54,30 @@ export const StyledPage = styled(StyledLanding)`
         align-self: flex-start;
       }
 
-      .detail-description {
+      .season-details-img-cont {
+        margin-top: 10vh;
+        min-height: 35vh;
+        height: 35vh;
+      }
+
+      .season-details-binge {
+        width: initial;
+        margin: initial;
+        align-self: flex-start;
+      }
+
+      .detail-description,
+      .season-details-desc {
         width: auto;
         max-width: 100%;
         grid-area: 1/2/1/3;
         align-self: center;
         justify-self: flex-start;
         padding-right: 7.5%;
+      }
+
+      .season-details-desc {
+        margin-top: 0;
       }
 
       .detail-reviews {
