@@ -13,16 +13,19 @@ import BingeCalculator from '@/components/ShowSpecific/BingeCalculator';
 const SeasonDetails = ({ details }) => {
   const image = getImage(details.poster_path);
 
-  // TODO add binge calculator + helper
-
   return (
-    <StyledSeasonDetails>
-      <div className="img-cont">
+    <StyledSeasonDetails className="season-details">
+      <div className="img-cont season-details-img-cont">
         <Image src={image} alt={details.name} layout="fill" objectFit="cover" priority />
       </div>
-      <Description title={details.name} overview={details.overview} isSeasonDetails />
+      <Description
+        title={details.name}
+        overview={details.overview}
+        isSeasonDetails
+        className="season-details-desc"
+      />
       <Stats episodes={details.episodes} />
-      <BingeCalculator episodes={details.episodes} />
+      <BingeCalculator episodes={details.episodes} className="season-details-binge" />
     </StyledSeasonDetails>
   );
 };
