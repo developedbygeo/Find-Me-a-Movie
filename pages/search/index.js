@@ -7,29 +7,37 @@ import tvData from '@/mock/search-data-tv.json';
 import ErrorLoad from '@/components/UI/ErrorLoad';
 import List from '@/components/Content/List';
 
-const Search = ({ search, platform }) => {
-  //   const { data, error } = useSWR([`/api/getSearchResults?title=${search}&platform=${platform}`], fetcher);
+const Search = ({ title, platform }) => {
+  // const { data, error } = useSWR([`/api/getSearchResults?title=${title}&platform=${platform}`], fetcher);
 
   const data = platform === 'movie' ? movieData : tvData;
 
   const extension = platform === 'movie' ? '/movies' : '/tv-series';
 
   return (
-    // <ErrorLoad error={error} data={data}>
+    // <ErrorLoad error={error} data={data} className="search-og">
     <ErrorLoad error={undefined} data={data} className="search-og">
-      <List content={data.results} title="Search Results" ext={extension} className="search-list-cont" />
+      {data && (
+        <List
+          content={data.data.results}
+          title="Search Results"
+          ext={extension}
+          className="search-list-cont"
+          isSearch
+        />
+      )}
     </ErrorLoad>
   );
 };
 
 export const getServerSideProps = async (ctx) => {
   const {
-    query: { search, platform },
+    query: { title, platform },
   } = ctx;
 
   return {
     props: {
-      search,
+      title,
       platform,
     },
   };
