@@ -19,27 +19,6 @@ export const StyledWrapper = styled.div`
     gap: 1rem;
   }
 
-  input {
-    ${InputStyle};
-    padding: 1.25rem 2rem;
-    &::placeholder {
-      font-size: 1.7rem;
-    }
-    @media (hover: hover) {
-      &:hover {
-        background: rgb(${({ theme }) => theme.colors.primary});
-      }
-    }
-  }
-
-  input {
-    width: 100%;
-  }
-
-  input::placeholder {
-    font-family: 'Montserrat', sans-serif;
-  }
-
   button {
     padding: 0.75rem;
     width: auto;
@@ -47,6 +26,10 @@ export const StyledWrapper = styled.div`
     svg {
       font-size: 2.5rem;
     }
+  }
+
+  input {
+    width: 100%;
   }
 
   form {
@@ -72,5 +55,33 @@ export const StyledWrapper = styled.div`
         : css`
             width: 35%;
           `};
+  }
+`;
+
+export const StyledInput = styled.input`
+  ${InputStyle};
+  padding: 1.25rem 2rem;
+
+  &::placeholder {
+    font-size: 1.7rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+  @media (hover: hover) {
+    &:hover {
+      background: rgb(${({ theme }) => theme.colors.primary});
+    }
+  }
+
+  &:focus {
+    ${({ hasError }) =>
+      hasError &&
+      css`
+        box-shadow: 0 0 0 0 rgb(${({ theme }) => theme.colors.accent}) inset,
+          rgb(${({ theme }) => theme.colors.accent}) 0 0 0 0.4rem;
+
+        &::placeholder {
+          color: rgba(${({ theme }) => theme.colors.white}, 0.8);
+        }
+      `};
   }
 `;
