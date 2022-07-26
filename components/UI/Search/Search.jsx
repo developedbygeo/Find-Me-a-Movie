@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import Select from 'react-select';
 
-import { StyledWrapper } from './Search.styled';
+import { StyledWrapper, StyledInput } from './Search.styled';
 import { UnstyledButton } from '../Buttons.styled';
 import { BiSearchAlt } from 'react-icons/bi';
 import { customStyles } from './Select.styled';
@@ -19,10 +20,14 @@ const platformLookup = {
 
 const Search = ({ showCategories, defaultPlatformQuery, defaultPlaceholder, ...props }) => {
   const router = useRouter();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const { route } = router;
   const defaultValue = platformLookup[defaultPlatformQuery];
   const [selectVal, setSelectVal] = useState(defaultValue || selectOptions[0]);
-  const [searchTerm, setSearchTerm] = useState('');
   const inputPlaceholder = defaultPlaceholder || selectVal.placeholder;
 
   useEffect(() => {
@@ -31,30 +36,22 @@ const Search = ({ showCategories, defaultPlatformQuery, defaultPlaceholder, ...p
     }
   }, [defaultPlatformQuery, route]);
 
-  const formSubmitHandler = async (e) => {
-    e.preventDefault();
-    router.push(`/search?search=${searchTerm}&platform=${selectVal.value}`);
-  };
+  const formSubmitHandler = ({ searchQuery }) =>
+    router.push(`/search?title=${searchQuery}&platform=${selectVal.value}`);
 
   const selectGenreHandler = () =>
     setSelectVal((prevState) => (prevState === selectOptions[0] ? selectOptions[1] : selectOptions[0]));
 
-  const searchTermHandler = (e) => setSearchTerm(e.target.value);
-
   return (
     <StyledWrapper {...props}>
-      <form onSubmit={formSubmitHandler}>
+      <form onSubmit={handleSubmit(formSubmitHandler)}>
         <UnstyledButton type="submit" title="Search now" aria-label="Search now">
           <BiSearchAlt />
         </UnstyledButton>
-        <input
-          value={searchTerm}
-          onChange={searchTermHandler}
-          type="text"
-          placeholder={inputPlaceholder}
-          aria-label="Search for movies or TV series"
-          name="searchQuery"
-          required
+        <StyledInput
+          {...register('searchQuery', { required: true, minLength: 3 })}
+          placeholder={errors.searchQuery ? 'Field required' : inputPlaceholder}
+          hasError={errors.searchQuery}
         />
         {showCategories && (
           <Select
