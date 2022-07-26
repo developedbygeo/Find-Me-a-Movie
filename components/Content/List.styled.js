@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { gridMixin } from '@/shared/mixins';
 import { previewElevation } from '@/shared/shadows';
@@ -24,6 +24,12 @@ export const StyledList = styled.ul`
   .trending-details {
     height: 50%;
   }
+
+  ${({ searchStyling }) =>
+    searchStyling &&
+    css`
+      min-height: initial;
+    `}
 `;
 
 // for semantic purposes - to manipulate the tag
