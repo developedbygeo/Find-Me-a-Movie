@@ -25,7 +25,7 @@ const ErrorLoad = ({ error, data, children, isSubComponent, ogComponent, classNa
     return (
       <StyledErrLoad className="err">
         <HiOutlineEmojiSad />
-        <p>{error.info.errorUser || 'Something has gone wrong! Please try again.'}</p>
+        <p>{error.info?.errorUser || 'Something has gone wrong! Please try again.'}</p>
       </StyledErrLoad>
     );
   }
