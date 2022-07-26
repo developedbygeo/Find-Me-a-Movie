@@ -54,6 +54,7 @@ const Search = ({ showCategories, defaultPlatformQuery, defaultPlaceholder, ...p
           placeholder={inputPlaceholder}
           aria-label="Search for movies or TV series"
           name="searchQuery"
+          required
         />
         {showCategories && (
           <Select
