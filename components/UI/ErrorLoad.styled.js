@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { flexMixin } from '@/shared/mixins';
+import devices from '@/shared/breakpoints';
 
 export const StyledErrLoad = styled.section`
   height: 90vh;
@@ -29,5 +30,12 @@ export const StyledErrLoad = styled.section`
   &.sub {
     width: 3rem;
     height: 3rem;
+  }
+
+  @media ${devices.laptop} {
+    margin: initial;
+    width: 75% !important;
+    margin-inline: 17%;
+    padding: 2.5% 0 2.5% 0;
   }
 `;
