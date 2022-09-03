@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import devices from '@/shared/breakpoints';
 import { LinkWrapper } from '@/components/Details/ExternalLinks.styled';
 import { flexMixin } from '@/shared/mixins';
 
@@ -16,6 +17,10 @@ export const StyledPeopleLinks = styled(LinkWrapper)`
   div {
     width: 50%;
     ${flexMixin('space-evenly', 'center', 'row')};
+
+    @media ${devices.laptop} {
+      width: 100%;
+    }
   }
 `;
 
