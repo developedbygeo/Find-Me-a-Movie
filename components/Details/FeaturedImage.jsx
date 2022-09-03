@@ -8,7 +8,7 @@ const FeaturedImage = ({ backdropURL, poster, title, ...props }) => {
   const imagePath = getImage(backdropURL, 'w1280');
   const posterPath = getImage(poster, 'w500');
   const window = useWindow();
-  const imageToUse = window >= 1280 ? posterPath : imagePath;
+  const imageToUse = window >= 700 ? posterPath : imagePath;
 
   if (!backdropURL) return <></>;
 
