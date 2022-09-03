@@ -14,7 +14,7 @@ export const StyledPeopleLinks = styled(LinkWrapper)`
   }
 
   div {
-    width: 100%;
+    width: 50%;
     ${flexMixin('space-evenly', 'center', 'row')};
   }
 `;
