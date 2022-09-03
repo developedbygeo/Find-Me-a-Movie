@@ -5,7 +5,6 @@ import { resetDefaults } from '@/shared/mixins';
 import { highlightFocus, interactiveButton } from '@/shared/interactions';
 import { lightNeumorph, tagNeumorph, buttonNeumorph } from '@/shared/neumorphic';
 import { flexMixin } from '@/shared/mixins';
-import { showText, hideText } from '@/shared/animation';
 import { descriptionStyle } from '@/shared/typography';
 
 export const UnstyledButton = styled.button`
@@ -24,28 +23,15 @@ export const UnstyledButton = styled.button`
 export const StyledBackButtonCont = styled.div`
   ${flexMixin('flex-start', 'center', 'row')};
   gap: 2rem;
-  width: 50%;
+  margin-block: 2.5vh;
   width: auto;
   padding: 1rem;
   overflow: hidden;
+  cursor: pointer;
   @media ${devices.laptop} {
     position: absolute;
     top: 5%;
     left: 16.5%;
-
-    .back-text {
-      position: relative;
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(${({ theme }) => theme.colors.background}, 1);
-      }
-    }
-
     p {
       ${descriptionStyle};
     }
@@ -58,7 +44,6 @@ export const StyledBackButton = styled(UnstyledButton)`
   ${flexMixin('center', 'center', 'column')};
   padding: 0;
   border-radius: 50%;
-  margin: 2.5vh 0 0 2.5%;
   transition: all 150ms ease-in;
 
   svg {
@@ -66,24 +51,11 @@ export const StyledBackButton = styled(UnstyledButton)`
     pointer-events: none;
   }
 
-  .back-text {
-    display: none;
-    position: absolute;
-    bottom: -50%;
-  }
-
   @media (hover: hover) {
     &:hover {
       color: rgb(${({ theme }) => theme.colors.accent});
-      & ~ .back-text::after {
-        animation: ${showText} 0.65s ease-in-out;
-        width: 0%;
-      }
-    }
-    &:not(:hover) {
-      & ~ .back-text::after {
-        animation: ${hideText} 0.65s ease-in-out;
-        width: 100%;
+      .back-text {
+        color: rgb(${({ theme }) => theme.colors.accent});
       }
     }
   }
