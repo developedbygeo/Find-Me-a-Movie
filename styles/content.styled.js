@@ -31,7 +31,7 @@ export const StyledPage = styled(StyledLanding)`
     grid-template-rows: auto;
   }
 
-  @media ${devices.laptop} {
+  @media ${devices.laptop}, ${devices.landscapeMobileSS} {
     &.tv-details,
     &.season-details,
     &.movie-details,
