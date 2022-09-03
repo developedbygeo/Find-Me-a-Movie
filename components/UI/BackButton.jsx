@@ -9,8 +9,8 @@ const BackButton = ({ ...props }) => {
   const backHandler = () => router.back();
 
   return (
-    <StyledBackButtonCont>
-      <StyledBackButton {...props} onClick={backHandler} title="Previous page" aria-label="Previous page">
+    <StyledBackButtonCont onClick={backHandler} title="Previous page" aria-label="Previous page">
+      <StyledBackButton {...props}>
         <MdOutlineArrowBackIosNew />
       </StyledBackButton>
       <div className="back-text">
