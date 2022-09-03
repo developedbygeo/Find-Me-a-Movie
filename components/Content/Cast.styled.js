@@ -15,6 +15,7 @@ export const StyledCastList = styled(GalleryWrapper)`
   width: 95%;
   width: auto;
   height: auto;
+  margin-inline: 5%;
 
   li {
     box-shadow: none !important;
