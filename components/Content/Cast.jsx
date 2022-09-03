@@ -23,9 +23,14 @@ const Cast = ({ cast, titleAs }) => {
         mode: 'free-snap',
         centered: true,
         slides: {
-          perView: 4,
+          perView: 5,
         },
         breakpoints: {
+          '(min-width: 768px)': {
+            slides: {
+              perView: 6,
+            },
+          },
           '(min-width: 1150px)': {
             slides: {
               perView: 9,
