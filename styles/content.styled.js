@@ -72,6 +72,7 @@ export const StyledPage = styled(StyledLanding)`
 
       .season-details-stats {
         height: 100%;
+        justify-content: space-between;
       }
 
       .detail-description,
@@ -172,6 +173,7 @@ export const StyledPage = styled(StyledLanding)`
         }
         li {
           height: 100%;
+          min-height: 30vh;
           width: 85%;
           margin: auto;
         }
@@ -220,6 +222,14 @@ export const StyledPage = styled(StyledLanding)`
       li {
         width: 95%;
         margin: auto;
+      }
+    }
+  }
+
+  @media ${devices.landscapeMobileSS} {
+    &.tv-details {
+      .recommended ul {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   }
