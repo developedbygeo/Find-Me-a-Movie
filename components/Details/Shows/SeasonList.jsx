@@ -24,8 +24,8 @@ const desktopSlider = {
 };
 
 const SeasonList = ({ title, showId, seasons, shouldHaveButtons, ...props }) => {
-  const window = useWindow();
-  const settings = window > 1150 ? desktopSlider : mobileSlider;
+  const [width] = useWindow();
+  const settings = width > 1150 ? desktopSlider : mobileSlider;
   const { ref, slider, currentSlide, load } = useSlider(settings);
   const isSliderReady = load && slider.current;
 
