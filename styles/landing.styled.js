@@ -21,7 +21,6 @@ export const StyledLanding = styled.section`
 `;
 
 export const StyledTrending = styled(ArticleCont)`
-  height: 45vh;
   ${flexMixin('space-around', 'flex-start', 'column')};
 
   h1 {
@@ -34,6 +33,17 @@ export const StyledTrending = styled(ArticleCont)`
     }
   }
   @media ${devices.laptop} {
+    h1 {
+      padding: 0;
+    }
+  }
+
+  @media ${devices.landscapeMobileSS} {
+    gap: 2rem;
+    height: auto;
+    width: 85%;
+    margin: auto;
+
     h1 {
       padding: 0;
     }
@@ -73,6 +83,15 @@ export const StyledRecommended = styled(ArticleCont)`
         width: 90%;
         margin: auto;
       }
+    }
+  }
+
+  @media ${devices.landscapeMobileSS} {
+    width: 85%;
+    margin: auto;
+    ul {
+      grid-template-columns: repeat(5, 1fr);
+      min-height: 70vh;
     }
   }
 `;
