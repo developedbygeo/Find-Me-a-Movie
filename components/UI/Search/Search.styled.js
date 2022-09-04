@@ -56,6 +56,17 @@ export const StyledWrapper = styled.div`
             width: 35%;
           `};
   }
+
+  @media ${devices.landscapeMobileSS} {
+    padding-block: 0;
+    width: 85%;
+    margin: auto;
+    margin-block: 5vh;
+
+    input {
+      width: 45%;
+    }
+  }
 `;
 
 export const StyledInput = styled.input`
