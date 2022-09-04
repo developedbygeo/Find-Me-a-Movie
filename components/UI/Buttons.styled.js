@@ -30,10 +30,21 @@ export const StyledBackButtonCont = styled.div`
   cursor: pointer;
   @media ${devices.laptop} {
     position: absolute;
-    top: 5%;
+    top: 2.5%;
     left: 16.5%;
     p {
       ${descriptionStyle};
+      transition: all 100ms ease-in;
+    }
+  }
+  @media (hover: hover) {
+    &:hover {
+      button {
+        color: rgb(${({ theme }) => theme.colors.accent});
+      }
+      p {
+        color: rgb(${({ theme }) => theme.colors.white});
+      }
     }
   }
 `;
@@ -49,15 +60,6 @@ export const StyledBackButton = styled(UnstyledButton)`
   svg {
     font-size: 3rem;
     pointer-events: none;
-  }
-
-  @media (hover: hover) {
-    &:hover {
-      color: rgb(${({ theme }) => theme.colors.accent});
-      .back-text {
-        color: rgb(${({ theme }) => theme.colors.accent});
-      }
-    }
   }
 
   @media ${devices.laptop} {
