@@ -84,3 +84,11 @@ export const getCertainReviews = (reviewsArr, num = 2) => {
   if (!reviewsArr) return [];
   return reviewsArr.slice(0, num);
 };
+
+export const getResponsiveImage = (width, height, images) => {
+  if (!images) return '';
+  if (width > 800 && height > 1100) return images.landscape;
+  if (width >= 768 && width < 1200 && height >= 1024) return images.landscape;
+  if (width < 500) return images.landscape;
+  return images.poster;
+};
