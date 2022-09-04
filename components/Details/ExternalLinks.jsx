@@ -6,8 +6,8 @@ import { SiFacebook, SiTwitter, SiInstagram, SiImdb } from 'react-icons/si';
 
 const ExternalLinks = ({ links, ...props }) => {
   const { facebook_id, twitter_id, instagram_id, imdb_id } = links;
-  const window = useWindow();
-  const isDesktop = window > 1280;
+  const [width] = useWindow();
+  const isDesktop = width > 1280;
 
   return (
     <LinkWrapper {...props}>
