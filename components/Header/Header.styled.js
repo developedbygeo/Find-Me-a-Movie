@@ -8,6 +8,14 @@ export const LogoContainer = styled.div`
   position: relative;
   height: auto;
   width: 5rem;
+
+  @media ${devices.landscapeMobileSS} {
+    margin-left: 2vw;
+  }
+
+  @media ${devices.laptop} {
+    margin-left: 0;
+  }
 `;
 
 export const StyledHeader = styled.header`
@@ -26,5 +34,23 @@ export const StyledHeader = styled.header`
 
   @media ${devices.tablet} {
     padding-inline: 7.5%;
+  }
+
+  @media ${devices.landscapeMobileSS} {
+    padding-inline: 5%;
+
+    /* profile button */
+    & > button {
+      justify-self: flex-end;
+    }
+
+    & > nav {
+      justify-content: space-evenly;
+      width: 50%;
+    }
+  }
+
+  @media ${devices.laptop} {
+    padding-inline: 0%;
   }
 `;
