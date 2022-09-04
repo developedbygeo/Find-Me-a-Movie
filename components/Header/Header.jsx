@@ -12,8 +12,8 @@ import Profile from '@/UI/Profile';
 
 const Header = () => {
   const [showProfile, setShowProfile] = useReducer((state) => !state, false);
-  const window = useWindow();
-  const gradient = window > 1150 ? '22deg' : '262deg';
+  const [width] = useWindow();
+  const gradient = width > 1150 ? '22deg' : '262deg';
 
   const toggleProfileHandler = () => setShowProfile();
 
