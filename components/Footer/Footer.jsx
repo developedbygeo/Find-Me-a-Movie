@@ -4,8 +4,8 @@ import { StyledFooter } from './Footer.styled';
 import { BsFillHeartFill } from 'react-icons/bs';
 
 const Footer = () => {
-  const window = useWindow();
-  const gradient = window > 1150 ? '32deg' : '94deg';
+  const [width] = useWindow();
+  const gradient = width > 1150 ? '32deg' : '94deg';
 
   return (
     <StyledFooter gradientAngle={gradient}>
