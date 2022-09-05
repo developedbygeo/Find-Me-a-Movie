@@ -11,8 +11,6 @@ const FeaturedImage = ({ backdropURL, poster, title, ...props }) => {
   const [width, height] = useWindow();
   const imageToUse = getResponsiveImage(width, height, { poster: posterPath, landscape: imagePath });
 
-  console.log(imagePath);
-
   if (!backdropURL) return <></>;
 
   return (
