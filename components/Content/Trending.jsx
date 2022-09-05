@@ -1,7 +1,7 @@
-import useWindow from '@/hooks/useWindow';
 import useSlider from '@/hooks/useSlider';
 import { useState, useEffect } from 'react';
 
+import Controls from '@/components/UI/SliderControls/Controls';
 import { StyledTrending, GalleryWrapper } from '@/styles/landing.styled';
 import TrendingItem from './TrendingItem';
 
@@ -23,18 +23,19 @@ const Trending = ({ trendingData }) => {
         breakpoints: {
           '(min-width: 768px)': {
             slides: {
-              perView: 6,
-              spacing: 30,
+              perView: 4,
+              spacing: 10,
             },
           },
           '(min-width: 1150px)': {
             slides: {
-              perView: 9,
+              perView: 7,
+              spacing: 20,
             },
           },
           '(min-width: 319px) and (orientation: landscape) and (max-height: 450px)': {
             slides: {
-              perView: 5,
+              perView: 4,
               spacing: 10,
             },
           },
@@ -75,6 +76,7 @@ const Trending = ({ trendingData }) => {
             })}
         </ul>
       </GalleryWrapper>
+      <Controls slidesLength={data?.length} currentSlide={currentSlide} slider={slider} disableDots={true} />
     </StyledTrending>
   );
 };
