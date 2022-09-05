@@ -28,6 +28,10 @@ const modalStyle = css`
   @media ${devices.laptop} {
     width: 40%;
   }
+
+  @media ${devices.landscapeMobileSS} {
+    width: 50%;
+  }
 `;
 
 const getDivStyle = ({ backdrop }) => {
