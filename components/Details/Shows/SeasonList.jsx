@@ -1,33 +1,55 @@
 import SeasonItem from './SeasonItem';
 import useSlider from '@/hooks/useSlider';
-import useWindow from '@/hooks/useWindow';
+
+import { useState, useEffect } from 'react';
 
 import Controls from '@/components/UI/SliderControls/Controls';
 import { GalleryWrapper } from '@/styles/landing.styled';
 import { ListWrapper } from './SeasonList.styled';
 
-const mobileSlider = {
-  loop: true,
-  mode: 'free-snap',
-  slides: {
-    perView: 2,
-    spacing: 10,
-  },
-};
-
-const desktopSlider = {
-  ...mobileSlider,
-  slides: {
-    perView: 4,
-    spacing: 15,
-  },
-};
-
 const SeasonList = ({ title, showId, seasons, shouldHaveButtons, ...props }) => {
-  const [width] = useWindow();
-  const settings = width > 1150 ? desktopSlider : mobileSlider;
-  const { ref, slider, currentSlide, load } = useSlider(settings);
+  const [options, setOptions] = useState({});
+  const [currentSeasons, setCurrentSeasons] = useState([]);
+  const { ref, slider, currentSlide, load } = useSlider(options);
   const isSliderReady = load && slider.current;
+
+  useEffect(() => {
+    if (seasons) {
+      setCurrentSeasons(seasons);
+      setOptions({
+        loop: true,
+        mode: 'free-snap',
+        centered: true,
+        slides: {
+          perView: 2,
+          spacing: 10,
+        },
+        breakpoints: {
+          '(min-width: 768px)': {
+            slides: {
+              perView: 2.5,
+              spacing: 15,
+            },
+          },
+          '(min-width: 1150px)': {
+            slides: {
+              perView: 3,
+              spacing: 15,
+            },
+          },
+          '(min-width: 319px) and (orientation: landscape) and (max-height: 450px)': {
+            slides: {
+              perView: 4,
+              spacing: 10,
+            },
+          },
+        },
+        slideChanged(s) {
+          setCurrentSlide(s.details().relativeSlide);
+        },
+      });
+    }
+  }, [seasons, slider]);
 
   return (
     <ListWrapper {...props}>
@@ -40,22 +62,23 @@ const SeasonList = ({ title, showId, seasons, shouldHaveButtons, ...props }) => 
           alt={`${title} seasons`}
           aria-label={`${title} seasons`}
         >
-          {seasons.map((season, idx) => {
-            const isPriority = idx > 2;
-            return (
-              <SeasonItem
-                className="keen-slider__slide"
-                key={season.id}
-                showId={showId}
-                details={season}
-                priority={isPriority}
-                aria-label={`slide ${idx + 1} of ${seasons.length}`}
-                aria-current={idx === currentSlide}
-                tabIndex={0}
-                role="group"
-              />
-            );
-          })}
+          {currentSeasons &&
+            currentSeasons.map((season, idx) => {
+              const isPriority = idx > 2;
+              return (
+                <SeasonItem
+                  className="keen-slider__slide"
+                  key={season.id}
+                  showId={showId}
+                  details={season}
+                  priority={isPriority}
+                  aria-label={`slide ${idx + 1} of ${seasons.length}`}
+                  aria-current={idx === currentSlide}
+                  tabIndex={0}
+                  role="group"
+                />
+              );
+            })}
         </ul>
       </GalleryWrapper>
       {shouldHaveButtons && isSliderReady && (
