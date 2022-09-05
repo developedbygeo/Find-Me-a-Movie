@@ -47,6 +47,10 @@ export const StyledBackButtonCont = styled.div`
       }
     }
   }
+
+  @media ${devices.landscapeMobileSS} {
+    padding-inline: 11%;
+  }
 `;
 
 export const StyledBackButton = styled(UnstyledButton)`
