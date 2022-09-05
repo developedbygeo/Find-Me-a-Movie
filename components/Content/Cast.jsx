@@ -36,6 +36,12 @@ const Cast = ({ cast, titleAs }) => {
               perView: 9,
             },
           },
+          '(min-width: 319px) and (orientation: landscape) and (max-height: 450px)': {
+            slides: {
+              perView: 7,
+              spacing: 10,
+            },
+          },
         },
         slideChanged(s) {
           setCurrentSlide(s.details().relativeSlide);
