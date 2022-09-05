@@ -31,6 +31,12 @@ export const StyledPage = styled(StyledLanding)`
     grid-template-rows: auto;
   }
 
+  @media ${devices.tablet} {
+    &.coming-soon {
+      margin-top: 20vh;
+    }
+  }
+
   @media ${devices.laptop}, ${devices.landscapeMobileSS} {
     &.tv-details,
     &.season-details,
@@ -227,9 +233,39 @@ export const StyledPage = styled(StyledLanding)`
   }
 
   @media ${devices.landscapeMobileSS} {
-    &.tv-details {
-      .recommended ul {
-        grid-template-columns: repeat(3, 1fr);
+    &.tv-details,
+    &.movie-details {
+      width: 80%;
+      margin-inline: 13%;
+
+      .recommended {
+        width: 100%;
+        ul {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 7rem;
+
+          li {
+            min-height: 35vh;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    &.movies-og,
+    &.tv-og,
+    &.search-og {
+      width: 90%;
+      margin-inline: 5%;
+    }
+
+    &.person-details {
+      width: 80%;
+      margin-inline: 12%;
+
+      .people-links > div {
+        width: 100%;
+        justify-content: space-between;
       }
     }
   }
