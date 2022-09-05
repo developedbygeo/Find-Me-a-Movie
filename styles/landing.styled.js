@@ -29,12 +29,12 @@ export const StyledTrending = styled(ArticleCont)`
 
   @media ${devices.tablet} {
     h1 {
-      padding: 5% 0 0 7.5%;
+      padding-block: 2.5%;
     }
   }
   @media ${devices.laptop} {
     h1 {
-      padding: 0;
+      padding: 2.5% 0 2.5% 0;
     }
   }
 
@@ -46,6 +46,7 @@ export const StyledTrending = styled(ArticleCont)`
 
     h1 {
       padding: 0;
+      padding-left: 6%;
     }
   }
 `;
@@ -89,16 +90,21 @@ export const StyledRecommended = styled(ArticleCont)`
   @media ${devices.landscapeMobileSS} {
     width: 85%;
     margin: auto;
+
+    &.landing-recommended {
+      padding-inline: 5%;
+    }
+
     ul {
       grid-template-columns: repeat(5, 1fr);
       min-height: 70vh;
+      gap: 2rem;
     }
   }
 `;
 
 export const GalleryWrapper = styled.article`
   width: 100vw;
-  /* TODO adjust this for future mq */
   height: 35vh;
   align-self: center;
   ${flexMixin('center', 'center', 'column')};
@@ -109,5 +115,9 @@ export const GalleryWrapper = styled.article`
     width: 100vw;
     height: 100%;
     overflow: hidden;
+  }
+
+  @media ${devices.landscapeMobileSS} {
+    padding-inline: 15%;
   }
 `;
