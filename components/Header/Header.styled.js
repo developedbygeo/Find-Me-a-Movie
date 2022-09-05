@@ -37,11 +37,12 @@ export const StyledHeader = styled.header`
   }
 
   @media ${devices.landscapeMobileSS} {
-    padding-inline: 5%;
+    padding-inline: 11%;
 
     /* profile button */
     & > button {
       justify-self: flex-end;
+      margin-right: 2vw;
     }
 
     & > nav {
