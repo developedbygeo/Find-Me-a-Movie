@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import devices from '@/shared/breakpoints';
 import { GalleryWrapper, StyledRecommended } from '@/styles/landing.styled';
 
 import { lightNeumorph } from '@/shared/neumorphic';
@@ -40,6 +41,10 @@ export const StyledCastList = styled(GalleryWrapper)`
     .arr-left {
       border-radius: 50% 0% 0% 50%;
     }
+  }
+
+  @media ${devices.landscapeMobileSS} {
+    padding-inline: 0%;
   }
 `;
 
